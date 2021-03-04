@@ -11,18 +11,14 @@ Use the following commands to navigate through the filesystem:
 
 ## Tasks
 ### List files in home folder
-```
-ls
-```
+**`ls`**
 ```
 dkofler@ibk-tr-deb01:~$ ls
 dkofler@ibk-tr-deb01:~$
 ```
 
 ### Extend the list output
-```
-ls -lah
-```
+**`ls -lah`**
 ```
 dkofler@ibk-tr-deb01:~$ ls -lah
 total 24K
@@ -35,9 +31,7 @@ drwxr-xr-x 3 root    root    4.0K Mar  1 17:17 ..
 ```
 
 ### Show root filesystem
-```
-ls -l /
-```
+**`ls -l /`**
 ```
 dkofler@ibk-tr-deb01:~$ ls -l /
 total 60
@@ -70,14 +64,10 @@ lrwxrwxrwx   1 root root    28 Mar  1 17:13 vmlinuz.old -> boot/vmlinuz-4.19.0-1
 ```
 
 ### Change to the /var directory
-```
-cd /var
-```
+**`cd /var`**
 
 ### List files in the /var directory
-```
-ls -l
-```
+**`ls -l`**
 ```
 dkofler@ibk-tr-deb01:/var$ ls -l
 total 36
@@ -95,23 +85,17 @@ drwxrwxrwt  3 root root  4096 Mar  3 00:00 tmp
 ```
 
 ### Change to your home directory
-```
-cd
-```
+**`cd`**
 
 ### Print the working directory
-```
-pwd
-```
+**`pwd`**
 ```
 dkofler@ibk-tr-deb01:~$ pwd
 /home/dkofler
 ```
 
 ### Change to the parent directory
-```
-cd ..
-```
+**`cd ..`**
 ```
 dkofler@ibk-tr-deb01:~$ cd ..
 dkofler@ibk-tr-deb01:/home$ pwd
@@ -119,14 +103,10 @@ dkofler@ibk-tr-deb01:/home$ pwd
 ```
 
 ### Change to the /var/cache/apt directory
-```
-cd /var/cache/apt
-```
+**`cd /var/cache/apt`**
 
 ### Change back to the /home directory
-```
-cd -
-```
+**`cd -`**
 ```
 dkofler@ibk-tr-deb01:/var/cache/apt$ cd -
 /home
