@@ -65,6 +65,25 @@ lrwxrwxrwx   1 root root    28 Mar  1 17:13 vmlinuz -> boot/vmlinuz-4.19.0-14-am
 lrwxrwxrwx   1 root root    28 Mar  1 17:13 vmlinuz.old -> boot/vmlinuz-4.19.0-14-amd64
 ```
 
+### Use options in a different order
+**`cd /usr`**  
+**`ls -hl`**
+```
+dkofler@ibk-tr-deb01:/usr$ ls -hl
+total 68K
+drwxr-xr-x  2 root root  20K Mar  3 12:19 bin
+drwxr-xr-x  2 root root 4.0K Jan 30 18:37 games
+drwxr-xr-x  3 root root 4.0K Mar  1 17:23 include
+drwxr-xr-x 53 root root 4.0K Mar  1 17:23 lib
+drwxr-xr-x  2 root root 4.0K Mar  1 17:11 lib32
+drwxr-xr-x  2 root root 4.0K Mar  1 17:12 lib64
+drwxr-xr-x  2 root root 4.0K Mar  1 17:11 libx32
+drwxr-xr-x 10 root root 4.0K Mar  1 17:11 local
+drwxr-xr-x  2 root root  12K Mar  1 17:23 sbin
+drwxr-xr-x 85 root root 4.0K Mar  1 17:23 share
+drwxr-xr-x  2 root root 4.0K Jan 30 18:37 src
+```
+
 ### Change to the /var directory
 **`cd /var`**
 
@@ -137,3 +156,49 @@ dkofler@ibk-tr-deb01:/boot/grub$ pwd
 ### Use tab completion
 **`cd /var/ca<TAB>`**
 
+### Use same command with upper case letter
+**`cd /var/Ca<TAB>`**
+
+### Create a directory
+**`cd`**  
+**`mkdir nts`**  
+**`ls -l`**
+```
+dkofler@ibk-tr-deb01:~$ cd
+dkofler@ibk-tr-deb01:~$ mkdir nts
+dkofler@ibk-tr-deb01:~$ ls -l
+total 4
+drwxr-xr-x 2 dkofler dkofler 4096 Mar  6 18:39 nts
+```
+
+### Create a subdirectory
+**`mkdir nts/subdir`**    
+**`ls -l nts`**
+
+### Create a new directory with a subdirectory
+**`mkdir nts2/subdir2`**  
+```
+dkofler@ibk-tr-deb01:~$ mkdir nts2/subdir2
+mkdir: cannot create directory ‘nts2/subdir2’: No such file or directory
+```
+### Create a new directory with a subdirectory and the -p option
+**`mkdir nts2/subdir2`**  
+**`ls -l nts2`**
+```
+dkofler@ibk-tr-deb01:~$ ls -l nts2/
+total 4
+drwxr-xr-x 2 dkofler dkofler 4096 Mar  6 18:47 subdir2
+```
+
+### Delete the subdir directory
+**`rmdir nts/subdir`**
+
+### Delete the nts2 directory
+**`rmdir nts2`**
+```
+dkofler@ibk-tr-deb01:~$ rmdir nts2
+rmdir: failed to remove 'nts2': Directory not empty
+```
+
+### Delete the subdir2 directory with the -p option
+**`rmdir nts2/subdir2`**
