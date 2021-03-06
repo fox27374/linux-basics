@@ -1,4 +1,6 @@
 # Linux basics training
 ## Labguide
-0) [Connect SSH](doc/Labguide/00-connect-ssh.md)
-1) [Filesystem](doc/Labguide/01-filesystem.md)
+0) [Connect with SSH](doc/Labguide/connect-ssh.md)
+1) [Man pages](doc/Labguide/man-pages.md)
+2) [Working with directories](doc/Labguide/working-with-dirs.md)
+3) [Working with files](doc/Labguide/working-with-files.md)

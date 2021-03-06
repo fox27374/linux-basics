@@ -21,6 +21,4 @@ The session is saved automatically and you can reuse it.
 ## Linux
 No additional software is needed, just open a terminal session and directly connect via the "ssh" command.
 
-```
-ssh username@<IP address of the lab system>
-```
+**`ssh username@<IP address of the lab system>`**

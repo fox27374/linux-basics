@@ -1,4 +1,4 @@
-# Filesystem
+# Working with directories
 ## Commands
 Use the following commands to navigate through the filesystem:
 
@@ -7,7 +7,9 @@ Use the following commands to navigate through the filesystem:
 | cd | change directory |
 | ls | list directory |
 | pwd | print working directory |
-
+| mkdir | make directory |
+| rmdir | remove directory |
+---
 
 ## Tasks
 ### List files in home folder
@@ -112,3 +114,26 @@ dkofler@ibk-tr-deb01:/var/cache/apt$ cd -
 /home
 dkofler@ibk-tr-deb01:/home$
 ```
+
+### Use absolute and relaive paths
+**`cd /boot`**
+**`ls`**
+```
+dkofler@ibk-tr-deb01:~$ cd /boot
+dkofler@ibk-tr-deb01:/boot$ ls
+config-4.19.0-14-amd64  grub  initrd.img-4.19.0-14-amd64  System.map-4.19.0-14-amd64  vmlinuz-4.19.0-14-amd64
+```
+**`cd /grub`**
+```
+dkofler@ibk-tr-deb01:/boot$ cd /grub
+-bash: cd: /grub: No such file or directory
+```
+**`cd grub`**
+```
+dkofler@ibk-tr-deb01:/boot$ cd grub
+dkofler@ibk-tr-deb01:/boot/grub$ pwd
+/boot/grub
+```
+### Use tab completion
+**`cd /var/ca<TAB>`**
+
