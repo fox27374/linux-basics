@@ -170,4 +170,3 @@ drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:16 dir-renamed
 -rw-r--r-- 1 dkofler dkofler    0 Mar  7 21:06 file-renamed
 -rw-r--r-- 1 dkofler dkofler  807 Mar  1 17:17 .profile
 ```
-
