@@ -50,7 +50,7 @@ cat /etc/os-release | grep DEBIAN
 
 ### Search the history for the last command containing a word
 **`CTRL+r`**  
-**``**
+**`ip`**
 ```
 (reverse-i-search)`ip': ip address show dev ens192 | grep -w 'inet' | awk '{print $2}' # Get IP of ens192
 dkofler@ibk-tr-deb01:~$ ip address show dev ens192 | grep -w 'inet' | awk '{print $2}' # Get IP of ens192
