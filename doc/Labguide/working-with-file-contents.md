@@ -82,5 +82,10 @@ This is some very cool content!
 ```
 
 ### Use cat copy a file
-**`cat content.txt > copy.txt`** 
+**`cat content.txt > copy.txt`**
 
+### View a large file page by page
+**`more /etc/mime.types`**
+
+### View a large file with less
+**`less /etc/locale.gen`**
