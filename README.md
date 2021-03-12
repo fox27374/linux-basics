@@ -6,3 +6,5 @@
 3) [Working with files](doc/Labguide/working-with-files.md)
 4) [Working with file contents](doc/Labguide/working-with-file-contents.md)
 5) [Shell operations](doc/Labguide/shell-operations.md)
+6) [Shell variables](doc/Labguide/shell-variables.md)
+7) [Shell history](doc/Labguide/shell-history.md)
