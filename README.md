@@ -8,3 +8,6 @@
 5) [Shell operations](doc/Labguide/shell-operations.md)
 6) [Shell variables](doc/Labguide/shell-variables.md)
 7) [Shell history](doc/Labguide/shell-history.md)
+8) [Pipes and commands](doc/Labguide/pipes-and-commands.md)
+9) [Using vi](doc/Labguide/using-vi.md)
+   
