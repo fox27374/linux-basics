@@ -26,7 +26,7 @@ This copies a tar file containing software to the directory you are currently in
 * uid: 10777
 * home directory: /opt/splunkforwarder
 * shell: /bin/bash  
-[Hint](doc/Labguide/install-software-custom-hints.md#5-Add-a-user-with-the-following-settings)
+[Hint](add-user-hint.md)
 
 ### 6. Set the password for the splunk user to 'splunk'
 ### 7. su to the splunk user and check if you are in the correct directory
