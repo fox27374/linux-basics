@@ -22,3 +22,14 @@ The session is saved automatically and you can reuse it.
 No additional software is needed, just open a terminal session and directly connect via the "ssh" command.
 
 **`ssh username@<IP address of the lab system>`**
+
+## Tasks
+### Change user password
+**`passwd`**
+```
+dkofler@ibk-tr-deb00:~$ passwd
+Changing password for dkofler.
+Current password:
+New password:
+Retype new password:
+```

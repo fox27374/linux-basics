@@ -10,4 +10,5 @@
 7) [Shell history](doc/Labguide/shell-history.md)
 8) [Pipes and commands](doc/Labguide/pipes-and-commands.md)
 9) [Using vi](doc/Labguide/using-vi.md)
-   
+10) [User management](doc/Labguide/user-management.md)
+11) [Permissions](doc/Labguide/permissions.md)
