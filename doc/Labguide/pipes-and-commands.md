@@ -110,3 +110,46 @@ search NTSLAB.loc
 nameserver 127.0.0.1
 nameserver 127.0.0.1
 ```
+
+### Find all .conf files in /etc
+**`find /etc -maxdepth 1 -name '*.conf'`**
+```
+dkofler@ibk-tr-deb00:~$ find /etc -maxdepth 1 -name '*.conf'
+/etc/discover-modprobe.conf
+/etc/resolv.conf
+/etc/debconf.conf
+/etc/ld.so.conf
+/etc/host.conf
+/etc/reportbug.conf
+/etc/kernel-img.conf
+/etc/hdparm.conf
+/etc/pam.conf
+/etc/xattr.conf
+/etc/rsyslog.conf
+/etc/deluser.conf
+/etc/libaudit.conf
+/etc/ucf.conf
+/etc/mke2fs.conf
+/etc/logrotate.conf
+/etc/ca-certificates.conf
+/etc/gai.conf
+/etc/sysctl.conf
+/etc/adduser.conf
+/etc/nsswitch.conf
+/etc/fuse.conf
+```
+### Find all .gz files in /var/log of the type file
+**`find /var/log/ -type f -name '*.gz' 2> /dev/null`**
+```
+dkofler@ibk-tr-deb00:~$ find /var/log/ -type f -name '*.gz' 2> /dev/null
+/var/log/syslog.6.gz
+/var/log/syslog.7.gz
+/var/log/syslog.3.gz
+/var/log/syslog.2.gz
+/var/log/kern.log.2.gz
+/var/log/syslog.5.gz
+/var/log/syslog.4.gz
+/var/log/daemon.log.2.gz
+/var/log/messages.2.gz
+/var/log/auth.log.2.gz
+```

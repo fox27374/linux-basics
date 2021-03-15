@@ -12,3 +12,5 @@
 9) [Using vi](doc/Labguide/using-vi.md)
 10) [User management](doc/Labguide/user-management.md)
 11) [Permissions](doc/Labguide/permissions.md)
+12) [Install software with apt](doc/Labguide/install-software-apt.md)
+13) [Install custom software](doc/Labguide/install-software-custom.md)
