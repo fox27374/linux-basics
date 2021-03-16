@@ -26,46 +26,47 @@ This copies a tar file containing software to the directory you are currently in
 * uid: 10777
 * home directory: /opt/splunkforwarder
 * shell: /bin/bash  
-[Hint](add-user-hint.md)
+Check man page to see how to set the home dir and the UID. [Hint](hint-add-user.md#5-add-a-user-with-the-following-settings)
 
-### 6. Set the password for the splunk user to 'splunk'
-### 7. su to the splunk user and check if you are in the correct directory
-### 8. Change to the /opt/splunkforwarder/bin directory
-### 9. Execute the command to start splunk
+### 6. Add the splunk user to the group adm
+### 7. Set the password for the splunk user to 'splunk'
+### 8. su to the splunk user and check if you are in the correct directory
+### 9. Change to the /opt/splunkforwarder/bin directory
+### 10. Execute the command to start splunk
 **`./splunk start --accept-license`**  
 When asked, provide the following credentials  
 * administrator username: admin
 * administrator password: admin#splunk
 
-### 10. Check if splunk is running
+### 11. Check if splunk is running
 **`./splunk status`**  
 
-### 11. Stop splunk
+### 12. Stop splunk
 **`./splunk stop`**
 
-### 12. Exit the splunk user environment
-### 13. As a normal user, change to the /opt/splunkforwarder/bin/ directory
+### 13. Exit the splunk user environment
+### 14. As a normal user, change to the /opt/splunkforwarder/bin/ directory
 
-### 14. Execute the following command to start splunk as a systemd process
+### 15. Execute the following command to start splunk as a systemd process
 **`sudo ./splunk enable boot-start -user splunk -systemd-managed 1`**
 
-### 15. Start splunk using systemd
+### 16. Start splunk using systemd
 **`sudo systemctl start SplunkForwarder.service`**
 
-### 16. Check the statud of the splunk service
+### 17. Check the statud of the splunk service
 **`sudo systemctl status SplunkForwarder.service`**
 
-### 17. su to the splunk user
-### 18. Change to the /opt/splunkforwarder/bin directory
-### 19. Execute the command to connect splunk to the depoyment server
+### 18. su to the splunk user
+### 19. Change to the /opt/splunkforwarder/bin directory
+### 20. Execute the command to connect splunk to the depoyment server
 **`./splunk set deploy-poll ibk-splunk-dep.ntslab.loc:8089`**  
 When asked, provide the admin credentials  
 * administrator username: admin
 * administrator password: admin#splunk  
 
-### 20. Exit the splunk user environment
-### 21. Restart splunk using systemd
+### 21. Exit the splunk user environment
+### 22. Restart splunk using systemd
 **`sudo systemctl restart SplunkForwarder.service`**
 
-### 22. Enable automatic startup of splunk using systemd
+### 23. Enable automatic startup of splunk using systemd
 **`sudo systemctl enable SplunkForwarder.service`**

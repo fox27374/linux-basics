@@ -25,3 +25,6 @@ Use the following commands to navigate through the filesystem:
 
 ### 6. List all installed packages
 **`sudo apt list --installed | more`**  
+
+### 7. Check the used sources
+**`cat /etc/apt/sources.list`** 
