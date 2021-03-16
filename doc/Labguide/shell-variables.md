@@ -1,7 +1,5 @@
 # Shell variables
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | echo | display passed arguments |

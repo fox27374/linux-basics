@@ -1,7 +1,5 @@
 # Using vi
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | ESC | change to command mode |

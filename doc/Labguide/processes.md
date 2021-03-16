@@ -1,7 +1,5 @@
 # Processes
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | systemctl| start / stop / status of processes |

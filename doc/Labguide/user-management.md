@@ -1,7 +1,5 @@
 # User management
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | useradd | add a Linux user |

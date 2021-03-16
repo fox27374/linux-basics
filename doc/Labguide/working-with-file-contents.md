@@ -1,7 +1,5 @@
 # Working with file contents
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | head | display the top lines of a file |

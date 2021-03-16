@@ -1,7 +1,5 @@
 # Working with directories
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | cd | change directory |

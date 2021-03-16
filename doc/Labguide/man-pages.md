@@ -1,7 +1,5 @@
 # Man pages
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | man | show manual page |

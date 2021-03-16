@@ -1,7 +1,5 @@
 # Working with files
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | file | determine the filetype |

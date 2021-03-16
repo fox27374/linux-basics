@@ -1,7 +1,5 @@
 # Shell history
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | history | display the shell history |

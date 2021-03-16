@@ -1,7 +1,5 @@
 # Pipes and commands
 ## Commands
-Use the following commands to navigate through the filesystem:
-
 | Command | Description |
 | ---| --- |
 | tee | write STDOUT to file |
