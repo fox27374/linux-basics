@@ -9,7 +9,7 @@ Use the following commands to navigate through the filesystem:
 ---
 
 ## Tasks
-### Repeat the last command
+### 1. Repeat the last command
 **`cat /etc/os-release | grep PRETTY`**  
 **`!!`**
 ```
@@ -18,14 +18,14 @@ cat /etc/os-release | grep PRETTY
 PRETTY_NAME="Debian GNU/Linux 10 (buster)"
 ```
 
-### Repeat the last command starting with "to"
+### 2. Repeat the last command starting with "to"
 **`!to`**  
 ```
 dkofler@ibk-tr-deb01:~$ !to
 touch file1
 ```
 
-### Show the last 10 history entries
+### 3. Show the last 10 history entries
 **`history 10`**  
 ```
 dkofler@ibk-tr-deb01:~$ history 10
@@ -41,14 +41,14 @@ dkofler@ibk-tr-deb01:~$ history 10
   550  history 10
 ```
 
-### Execute the command number n
+### 4. Execute the command number n
 **`!545`**  
 ```
 dkofler@ibk-tr-deb01:~$ !545
 cat /etc/os-release | grep DEBIAN
 ```
 
-### Search the history for the last command containing a word
+### 5. Search the history for the last command containing a word
 **`CTRL+r`**  
 **`ip`**
 ```
@@ -57,7 +57,7 @@ dkofler@ibk-tr-deb01:~$ ip address show dev ens192 | grep -w 'inet' | awk '{prin
 172.24.88.112/24
 ```
 
-### Prevent a command from beingrecorded in the history (space before the command)
+### 6. Prevent a command from beingrecorded in the history (space before the command)
 **`echo Password is abcdef`**  
 &nbsp;**` echo Password is ghijkl`**  
 **`history 3`**

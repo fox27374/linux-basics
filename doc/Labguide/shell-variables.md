@@ -11,21 +11,21 @@ Use the following commands to navigate through the filesystem:
 ---
 
 ## Tasks
-### Print your current shell
+### 1. Print your current shell
 **`echo $SHELL`**
 ```
 dkofler@ibk-tr-deb01:~$ echo $SHELL
 /bin/bash
 ```
 
-### Combine variables
+### 2. Combine variables
 **`echo This is $USER on $HOSTNAME and I am using $SHELL. My ID is $UID and currently in $PWD`**
 ```
 dkofler@ibk-tr-deb01:~$ echo This is $USER on $HOSTNAME and I am using $SHELL. My ID is $UID and currently in $PWD
 This is dkofler on ibk-tr-deb01 and I am using /bin/bash. My ID is 1000 and currently in /home/dkofler
 ```
 
-### Variables are case sensitive
+### 3. Variables are case sensitive
 **`echo Hostname: $HOSTNAME`**  
 **`echo Hostname: $hostname`**
 ```
@@ -35,11 +35,11 @@ dkofler@ibk-tr-deb01:~$ echo Hostname $hostname
 Hostname
 ```
 
-### Create your own variable
+### 4. Create your own variable
 **`myvar=Slayer`**  
 **`echo $myvar`**
 
-### Test the difference between single and double quotes
+### 5. Test the difference between single and double quotes
 **`echo $myvar`**  
 **`echo "$myvar"`**  
 **`echo '$myvar'`**
@@ -54,31 +54,31 @@ dkofler@ibk-tr-deb01:~$ echo '$myvar'
 $myvar
 ```
 
-### Display available variables
+### 6. Display available variables
 **`set | more`**
 
-### Delete variables
+### 7. Delete variables
 **`unset myvar`**  
 **`echo $myvar`**
 
-### Have a look at the $PS1 variable
+### 8. Have a look at the $PS1 variable
 **`echo $PS1`**
 ```
 dkofler@ibk-tr-deb01:~$ echo $PS1
 \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
 ```
 
-### Have a look at the $PATH variable
+### 9. Have a look at the $PATH variable
 **`echo $PATH`**
 ```
 dkofler@ibk-tr-deb01:~$ echo $PATH
 /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 ```
 
-### Display the exported variables in env
+### 10. Display the exported variables in env
 **`env`**
 
-### Test the difference between local and exported variables
+### 11. Test the difference between local and exported variables
 **`myvar2=two`**  
 **`myvar3=three`**  
 **`export myvar2`**  
@@ -94,7 +94,7 @@ dkofler@ibk-tr-deb01:~$ echo $myvar2 $myvar3
 two
 ```
 
-### Embedd commands
+### 12. Embedd commands
 **`echo The kernel version is $(uname -r)`**
 ```
 dkofler@ibk-tr-deb01:~$ echo The kernel version is $(uname -r)

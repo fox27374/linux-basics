@@ -12,7 +12,7 @@ Use the following commands to navigate through the filesystem:
 ---
 
 ## Tasks
-### Check filetypes of different files
+### 1. Check filetypes of different files
 **`file /usr/bin/ls`**
 ```
 dkofler@ibk-tr-deb01:~$ file /usr/bin/ls
@@ -36,7 +36,7 @@ dkofler@ibk-tr-deb01:~$ file /dev/sda1
 /dev/sda1: block special (8/1
 ```
 
-### Create files with touch
+### 2. Create files with touch
 **`touch file1`**  
 **`touch file2`**  
 **`ls -l`**
@@ -50,7 +50,7 @@ total 0
 
 ```
 
-### Create a file with a certain timestamp
+### 3. Create a file with a certain timestamp
 **`touch -t 198404021042 file3`**  
 **`ls -l`**
 ```
@@ -61,7 +61,7 @@ total 0
 -rw-r--r-- 1 dkofler dkofler 0 Apr  2  1984 file3
 ```
 
-### Delete a file
+### 4. Delete a file
 **`rm file1`**  
 **`ls -l`**
 ```
@@ -71,7 +71,7 @@ total 0
 -rw-r--r-- 1 dkofler dkofler 0 Apr  2  1984 file3
 ```
 
-### Delete non-empty directory
+### 5. Delete non-empty directory
 **`mkdir dir1`**  
 **`touch dir1/file4`**  
 **`rm -rf dir1`**
@@ -88,7 +88,7 @@ total 0
 -rw-r--r-- 1 dkofler dkofler 0 Apr  2  1984 file3
 ```
 
-### Copy a file
+### 6. Copy a file
 **`cp file1 file11`**  
 **`ls -l`**
 ```
@@ -101,7 +101,7 @@ total 0
 -rw-r--r-- 1 dkofler dkofler 0 Apr  2  1984 file3
 ```
 
-### Copy a file to another directory
+### 7. Copy a file to another directory
 **`mkdir dir2`**  
 **`cp file2 dir2/`**  
 **`ls dir2`**
@@ -112,7 +112,7 @@ dkofler@ibk-tr-deb01:~$ ls dir2
 file2
 ```
 
-### Copy a whole directory with files
+### 8. Copy a whole directory with files
 **`cp -r dir2 dir3`**  
 **`ls -l dir3`**
 ```
@@ -122,7 +122,7 @@ total 0
 -rw-r--r-- 1 dkofler dkofler 0 Mar  7 21:10 file2
 ```
 
-### Copy multiple files to a directory
+### 9. Copy multiple files to a directory
 **`cp file1 file11 file3 dir3/`**  
 **`ls -l dir3`**
 ```
@@ -135,7 +135,7 @@ total 0
 -rw-r--r-- 1 dkofler dkofler 0 Mar  7 21:12 file3
 ```
 
-### Move files to a directory
+### 10. Move files to a directory
 **`mv file1 dir2/`**  
 **`ls`**
 
@@ -147,7 +147,7 @@ dkofler@ibk-tr-deb01:~$ ls
 dir2  dir3  file11  file2  file3
 ```
 
-### Rename a file or a directory
+### 11. Rename a file or a directory
 **`mv file11 file-renamed`**  
 **`mv dir2 dir-renamed`**  
 **`ls -la`**

@@ -24,7 +24,7 @@ No additional software is needed, just open a terminal session and directly conn
 **`ssh username@<IP address of the lab system>`**
 
 ## Tasks
-### Change user password
+### 1. Change user password
 **`passwd`**
 ```
 dkofler@ibk-tr-deb00:~$ passwd

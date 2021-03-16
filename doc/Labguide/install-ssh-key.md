@@ -6,7 +6,7 @@ Use the following commands to navigate through the filesystem:
 | --- | --- |
 | wget | transfer files from url |
 | tar | compress / extract files |
-
+---
 
 ## Tasks
 ### 1. Generate a new public / private key pair

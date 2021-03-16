@@ -6,7 +6,8 @@ Use the following commands to navigate through the filesystem:
 | --- | --- |
 | wget | transfer files from url |
 | tar | compress / extract files |
-
+| netstat | show open ports and network connections |
+---
 
 ## Tasks
 ### 1. Download the Splunk UF
@@ -70,3 +71,5 @@ When asked, provide the admin credentials
 
 ### 23. Enable automatic startup of splunk using systemd
 **`sudo systemctl enable SplunkForwarder.service`**
+
+### 24. Check the port splunk is using for communication

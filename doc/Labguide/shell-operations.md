@@ -17,28 +17,28 @@ Use the following commands to navigate through the filesystem:
 ---
 
 ## Tasks
-### Pass a couple of arguments to echo
+### 1. Pass a couple of arguments to echo
 **`echo hi this is a test`**
 ```
 dkofler@ibk-tr-deb01:~$ echo hi this is a test
 hi this is a test
 ```
 
-### Add some whitespaces
+### 2. Add some whitespaces
 **`echo hi`** &nbsp;&nbsp;&nbsp;&nbsp; **`this is`** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`a test`**
 ```
 dkofler@ibk-tr-deb01:~$ echo hi      this is        a test
 hi this is a test
 ```
 
-### Prevent whitespace removal
+### 3. Prevent whitespace removal
 **`echo 'hi`** &nbsp;&nbsp;&nbsp;&nbsp; **`this is`** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`a test'`**
 ```
 dkofler@ibk-tr-deb01:~$ echo 'hi      this is        a test'
 hi      this is        a test
 ```
 
-### Add a newline
+### 4. Add a newline
 **`echo -e "hi this is a test \n to test the newline"`**
 ```
 dkofler@ibk-tr-deb01:~$ echo -e "hi this is a test \n to test the newline"
@@ -46,7 +46,7 @@ hi this is a test
  to test the newline
 ```
 
-### Check it the command is internal or external
+### 5. Check it the command is internal or external
 **`type cd cat ls`**
 ```
 dkofler@ibk-tr-deb01:~$ type cd cat ls
@@ -55,7 +55,7 @@ cat is /usr/bin/cat
 ls is aliased to `ls --color=auto'
 ```
 
-### Check the path variable for commands
+### 6. Check the path variable for commands
 **`which cd cat ls`**
 ```
 dkofler@ibk-tr-deb01:~$ which cd cat ls
@@ -63,7 +63,7 @@ dkofler@ibk-tr-deb01:~$ which cd cat ls
 /usr/bin/ls
 ```
 
-### Create an alias for the ls -lh command
+### 7. Create an alias for the ls -lh command
 **`alias ll='ls -lh'`**  
 **`ll'`**
 ```
@@ -77,7 +77,7 @@ drwxr-xr-x 2 dkofler dkofler 4.0K Mar  7 21:12 dir3
 drwxr-xr-x 2 dkofler dkofler 4.0K Mar  7 21:16 dir-renamed
 ```
 
-### Combine commands in one line
+### 8. Combine commands in one line
 **`echo Hello > file1.txt; echo Hello2 >> file1.txt; cat file1.txt; rm file1.txt`**
 ```
 dkofler@ibk-tr-deb01:~$ echo Hello > file1.txt; echo Hello2 >> file1.txt; cat file1.txt; rm file1.txt
@@ -85,16 +85,16 @@ Hello
 Hello2
 ```
 
-### Start a command and send it to the background
+### 9. Start a command and send it to the background
 **`ping -c 4 -i 7 blog.dot11.org &`**
 
-### Combine commands with a logical AND
+### 10. Combine commands with a logical AND
 **`sleep 5 && ping -c 3 www.google.at`**
 
-### Produce an error to that the 2nd command is not executed
+### 11. Produce an error to that the 2nd command is not executed
 **`sleep F && ping -c 3 www.google.at`**
 
-### Combine commands with a logical OR
+### 12. Combine commands with a logical OR
 **`cat daniel.txt || ls -l`**
 ```
 dkofler@ibk-tr-deb01:~$ cat daniel.txt || ls -l
@@ -106,7 +106,7 @@ total 40
 drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:12 dir3
 ```
 
-### Combine the two logical operators
+### 13. Combine the two logical operators
 **`touch file1`**  
 **`rm file1 && echo It worked! || echo It failed!`**  
 ```
@@ -124,14 +124,14 @@ It failed!
 dkofler@ibk-tr-deb01:~$ echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.
 Lets print an ampersand &; Then print some other chars like |, ' and <.
 
-### Escape the special characters we used before
+### 14. Escape the special characters we used before
 **`echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.`**
 ```
 dkofler@ibk-tr-deb01:~$ echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.
 Lets print an ampersand &; Then print some other chars like |, ' and <.
 ```
 
-### Escape the special characters we used before
+### 15. Escape the special characters we used before
 **`echo This is a very long command \`**  
 **`thats why we split it into \`**  
 **`three lines`**

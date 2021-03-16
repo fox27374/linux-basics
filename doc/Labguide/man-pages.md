@@ -7,16 +7,16 @@ Use the following commands to navigate through the filesystem:
 | man | show manual page |
 ---
 ## Tasks
-### man command
+### 1. man command
 **`man pwd`**
 
-### man configfile
+### 2. man configfile
 **`man sysctl.conf`**
 
-### man daemon
+### 3. man daemon
 **`man sshd`**
 
-### man containing a string
+### 4. man containing a string
 **`man -k ssh`**
 ```
 dkofler@ibk-tr-deb01:~$ man -k ssh
@@ -39,7 +39,7 @@ sshd (8)             - OpenSSH SSH daemon
 sshd_config (5)      - OpenSSH SSH daemon configuration file
 ```
 
-### Short description of the man page
+### 5. Short description of the man page
 **`whatis sshd`**
 ```
 dkofler@ibk-tr-deb01:~$ whatis sshd
@@ -48,7 +48,7 @@ dkofler@ibk-tr-deb01:~$ whatis ssh
 ssh (1)              - OpenSSH SSH client (remote login program)
 ```
 
-### Sections of man pages
+### 6. Sections of man pages
 **`man man`**
 ```
 1   Executable programs or shell commands

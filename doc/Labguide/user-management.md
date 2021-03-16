@@ -11,7 +11,7 @@ Use the following commands to navigate through the filesystem:
 | su | substitute user |
 | whoami | print the current username |
 | id | print user and group IDs |
-
+---
 
 
 ## Tasks

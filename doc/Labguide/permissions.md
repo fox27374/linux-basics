@@ -6,7 +6,7 @@ Use the following commands to navigate through the filesystem:
 | ---| --- |
 | chown | change file / directory owner |
 | chmod | modify file / directory permissions |
-
+---
 
 ## Tasks
 ### 1. Create a directory and a file that you own

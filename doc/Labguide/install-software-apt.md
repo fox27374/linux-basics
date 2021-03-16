@@ -5,7 +5,7 @@ Use the following commands to navigate through the filesystem:
 | Command | Description |
 | --- | --- |
 | apt | debian package manager |
-
+---
 
 ## Tasks
 ### 1. Update the apt repository

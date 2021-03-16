@@ -14,5 +14,6 @@
 11) [Permissions](doc/Labguide/permissions.md)
 12) [Install SSH keys](doc/Labguide/install-ssh-key.md)
 13) [Install software with apt](doc/Labguide/install-software-apt.md)
-14) [Install software: nginx](doc/Labguide/install-software-nginx.md)
-15) [Install software: splunk](doc/Labguide/install-software-splunk.md)
+14) [Processes](doc/Labguide/processes.md)
+15) [Install software: nginx](doc/Labguide/install-software-nginx.md)
+16) [Install software: splunk](doc/Labguide/install-software-splunk.md)

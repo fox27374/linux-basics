@@ -17,7 +17,7 @@ Use the following commands to navigate through the filesystem:
 ---
 
 ## Tasks
-### Uncomment an alias in .bashrc
+### 1. Uncomment an alias in .bashrc
 Open the file with vi  
 **`vi .bashrc`**  
 Search for a commented alias line  
@@ -47,7 +47,7 @@ drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:16 dir-renamed
 -rw-r--r-- 1 dkofler dkofler   54 Mar 14 17:28 error.txt
 ```
 
-### Remove a line from .bash_history
+### 2. Remove a line from .bash_history
 Open the file with vi  
 **`vi .bash_history`**  
 Go to line 32  
@@ -58,7 +58,7 @@ Write the file and quit vi
 **`:wq [ENTER]`**  
 
 
-### Edit a copy of resolv.conf
+### 3. Edit a copy of resolv.conf
 Copy the file to your home directory   
 **`cp /etc/resolv.conf .`**  
 Open the file with vi  

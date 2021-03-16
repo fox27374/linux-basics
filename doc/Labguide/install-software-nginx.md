@@ -5,7 +5,9 @@ Use the following commands to navigate through the filesystem:
 | Command | Description |
 | --- | --- |
 | apt | debian package manager |
-
+| systemctl| start / stop / status of processes |
+| netstat | show open ports and network connections |
+---
 
 ## Tasks
 ### 1. Update the apt repository
@@ -86,5 +88,14 @@ server {
 **`sudo rm /etc/nginx/sites-enabled/default`**
 
 ### 10. Start the nginx service
-### 11. Open a browser and visit your new website (replace XX with your student number)
-**`http://ibk-tr-debXX.ntslab.loc/`**
+### 11. Find the port that nginx is listening on
+### 12. Open a browser and visit your new website (replace XX with your student number)
+**`http://ibk-tr-debXX.ntslab.loc:<PORT>`**
+
+### 13. In your home directory, create a link to the html folder
+**`ln -s /var/www/ntslab/html html`**
+
+### 14. Edit the file directly using the link
+**`sudo vi html/index.html`**
+
+### 15. Add somthing cool to the html page and check the result
