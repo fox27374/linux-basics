@@ -53,3 +53,5 @@ Mar 16 16:43:09 ibk-tr-deb00 systemd[1]: nginx.service: Control process exited, 
 Mar 16 16:43:09 ibk-tr-deb00 systemd[1]: nginx.service: Failed with result 'exit-code'.
 Mar 16 16:43:09 ibk-tr-deb00 systemd[1]: Failed to start A high performance web server and a reverse proxy server.
 ```
+
+### 12. Remove the random string from the nginx.conf file and restart the service

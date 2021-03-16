@@ -19,3 +19,5 @@
 16) [Install software: nginx](doc/Labguide/install-software-nginx.md)
 17) [Logging](doc/Labguide/logging.md)
 18) [Install software: splunk](doc/Labguide/install-software-splunk.md)
+19) [System information](doc/Labguide/system-information.md)
+20) [Networking](doc/Labguide/networking.md)
