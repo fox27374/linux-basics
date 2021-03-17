@@ -9,7 +9,7 @@
 ## Tasks
 ### 1. Generate a new public / private key pair
 **`ssh-keygen -t rsa -b 2048`**  
-Dont dave the key to the default directory, choose your home folder: ./id_rsa
+Dont save the key to the default directory, choose your home folder: ./id_rsa
 ```
 dkofler@ibk-tr-deb00:~$ ssh-keygen -t rsa -b 2048
 Generating public/private rsa key pair.
