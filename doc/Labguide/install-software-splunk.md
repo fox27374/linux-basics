@@ -51,25 +51,26 @@ When asked, provide the following credentials
 ### 15. Execute the following command to start splunk as a systemd process
 **`sudo ./splunk enable boot-start -user splunk -systemd-managed 1`**
 
-### 16. Start splunk using systemd
+### 16. Open TCP ports 8089 and 9997 in the UFW
+### 17. Start splunk using systemd
 **`sudo systemctl start SplunkForwarder.service`**
 
-### 17. Check the statud of the splunk service
+### 18. Check the status of the splunk service
 **`sudo systemctl status SplunkForwarder.service`**
 
-### 18. su to the splunk user
-### 19. Change to the /opt/splunkforwarder/bin directory
-### 20. Execute the command to connect splunk to the depoyment server
+### 19. su to the splunk user
+### 20. Change to the /opt/splunkforwarder/bin directory
+### 21. Execute the command to connect splunk to the depoyment server
 **`./splunk set deploy-poll ibk-splunk-dep.ntslab.loc:8089`**  
 When asked, provide the admin credentials  
 * administrator username: admin
 * administrator password: admin#splunk  
 
-### 21. Exit the splunk user environment
-### 22. Restart splunk using systemd
+### 22. Exit the splunk user environment
+### 23. Restart splunk using systemd
 **`sudo systemctl restart SplunkForwarder.service`**
 
-### 23. Enable automatic startup of splunk using systemd
+### 24. Enable automatic startup of splunk using systemd
 **`sudo systemctl enable SplunkForwarder.service`**
 
-### 24. Check the port splunk is using for communication
+### 25. Check the port splunk is using for communication
