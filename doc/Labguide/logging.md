@@ -55,3 +55,6 @@ Mar 16 16:43:09 ibk-tr-deb00 systemd[1]: Failed to start A high performance web 
 ```
 
 ### 12. Remove the random string from the nginx.conf file and restart the service
+### 13. Check the journal and the systemctl to make sure the service is running
+### 14. Execute any sudo command (e.g sudo cat ....)
+### 15. Check the last 15 lines of /var/log/auth.log
