@@ -1,5 +1,11 @@
 # Linux basics training
 ## Labguide
+
+This guide is inteded to be used during a instructor-led training. Some chapters are structured in the way that students can work on them alone without an instructor.
+
+The basic structure is taken from [this](http://linux-training.be/linuxfun.pdf) awesome book by [Paul Cobbaut](http://www.linkedin.com/in/cobbaut). Even if the content is a little outdated, the main structure is very nice and perfect for Linux beginners.
+
+
 0) [Connect with SSH](doc/Labguide/connect-ssh.md)
 1) [Man pages](doc/Labguide/man-pages.md)
 2) [Working with directories](doc/Labguide/working-with-dirs.md)
