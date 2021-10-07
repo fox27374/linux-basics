@@ -30,4 +30,4 @@ The basic structure is taken from [this](http://linux-training.be/linuxfun.pdf) 
 21) [Networking UFW](doc/Labguide/networking-ufw.md)
 22) [Install software: splunk](doc/Labguide/install-software-splunk.md)
 
-All commands are tested and based on [Debian 10](https://www.debian.org/). IP addresses and FQDN names are internal lab IPs and names.
+All commands are tested and based on [Debian 11](https://www.debian.org/). IP addresses and FQDN names are internal lab IPs and names.
