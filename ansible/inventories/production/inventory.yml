@@ -1,0 +1,40 @@
+all:
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  children:
+    trainer:
+      hosts:
+        ibk-lnx-tr00.ntslab.loc:
+
+    students:
+      hosts:
+        ibk-lnx-tr01.ntslab.loc:
+            linux_user: tr01
+        ibk-lnx-tr02.ntslab.loc:
+            linux_user: tr02
+        ibk-lnx-tr03.ntslab.loc:
+            linux_user: tr03
+        ibk-lnx-tr04.ntslab.loc:
+            linux_user: tr04
+        ibk-lnx-tr05.ntslab.loc:
+            linux_user: tr05
+        ibk-lnx-tr06.ntslab.loc:
+            linux_user: tr06
+        ibk-lnx-tr07.ntslab.loc:
+            linux_user: tr07
+        ibk-lnx-tr08.ntslab.loc:
+            linux_user: tr08
+        ibk-lnx-tr09.ntslab.loc:
+            linux_user: tr09
+        ibk-lnx-tr10.ntslab.loc:
+            linux_user: tr10
+        ibk-lnx-tr11.ntslab.loc:
+            linux_user: tr11
+        ibk-lnx-tr12.ntslab.loc:
+            linux_user: tr12
+        ibk-lnx-tr13.ntslab.loc:
+            linux_user: tr13
+        ibk-lnx-tr14.ntslab.loc:
+            linux_user: tr14
+        ibk-lnx-tr15.ntslab.loc:
+            linux_user: tr15

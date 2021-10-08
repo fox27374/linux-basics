@@ -1,0 +1,3 @@
+---
+- name: Include the specified task file
+  include_tasks: "{{ deployment_task }}"

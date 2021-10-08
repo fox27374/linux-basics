@@ -1,0 +1,6 @@
+---
+- name: Update apt cache
+  include_tasks: apt_upgrade.yml
+
+- name: Install apt packages
+  include_tasks: apt_install.yml
