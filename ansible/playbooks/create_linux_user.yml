@@ -1,5 +1,5 @@
 - hosts:
-    - all
+    - trainer
   roles:
     - ../roles/common
   serial: 50

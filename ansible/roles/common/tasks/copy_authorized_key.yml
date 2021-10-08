@@ -1,0 +1,6 @@
+---
+- name: Set authorized key for user
+  ansible.posix.authorized_key:
+    user: dkofler
+    state: present
+    key: "{{ lookup('file', '../files/id_rsa.pub') }}"

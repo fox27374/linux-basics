@@ -5,6 +5,7 @@ all:
     trainer:
       hosts:
         ibk-lnx-tr00.ntslab.loc:
+          linux_user: tr01
 
     students:
       hosts:

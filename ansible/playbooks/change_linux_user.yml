@@ -6,5 +6,5 @@
   vars_files:
     - passwd.yml
   vars:
-    - deployment_task: delete_user.yml
+    - deployment_task: change_user.yml
   become: yes
