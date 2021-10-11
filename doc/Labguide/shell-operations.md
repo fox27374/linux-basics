@@ -126,7 +126,7 @@ dkofler@ibk-tr-deb01:~$ echo Lets print an ampersand \&\; Then print some other 
 Lets print an ampersand &; Then print some other chars like |, ' and <.
 ```
 
-### 15. Escape the special characters we used before
+### 15. Multilines
 **`echo This is a very long command \`**  
 **`thats why we split it into \`**  
 **`three lines`**
