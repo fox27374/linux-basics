@@ -122,6 +122,7 @@ It failed!
 ### 14. Escape the special characters we used before
 **`echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.`**
 ```
+dkofler@ibk-tr-deb01:~$ echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.
 Lets print an ampersand &; Then print some other chars like |, ' and <.
 ```
 
