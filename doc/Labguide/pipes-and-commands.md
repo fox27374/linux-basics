@@ -51,9 +51,16 @@ rm: cannot remove 'file42': No such file or directory
 **`ping blog.dot11.org | tee ping.log`**  
 
 ```
-dkofler@ibk-tr-deb01:~$ mv /etc /test
-mv: cannot move '/etc' to '/test': Permission denied
-dkofler@ibk-tr-deb01:~$ mv /etc /test 2> /dev/null
+dkofler@ibk-tr-deb01:~$ ping blog.dot11.org | tee ping.log
+PING blog.dot11.org (116.203.37.199) 56(84) bytes of data.
+64 bytes from static.199.37.203.116.clients.your-server.de (116.203.37.199): icmp_seq=1 ttl=51 time=26.0 ms
+64 bytes from static.199.37.203.116.clients.your-server.de (116.203.37.199): icmp_seq=2 ttl=51 time=29.3 ms
+^C
+
+dkofler@ibk-tr-deb01:~$ cat ping.log 
+PING blog.dot11.org (116.203.37.199) 56(84) bytes of data.
+64 bytes from static.199.37.203.116.clients.your-server.de (116.203.37.199): icmp_seq=1 ttl=51 time=26.0 ms
+64 bytes from static.199.37.203.116.clients.your-server.de (116.203.37.199): icmp_seq=2 ttl=51 time=29.3 ms
 ```
 
 ### 5. search all lines containing "curl" using grep
@@ -62,39 +69,36 @@ dkofler@ibk-tr-deb01:~$ mv /etc /test 2> /dev/null
 ### 6. filter the result and exclude "status" using grep
 **`cat /var/log/dpkg.log | grep curl | grep -v status`**  
 
-### 7. search all lines containing "curl" using grep
-**`cat /var/log/dpkg.log | grep curl`**
-
-### 8. Display one line before and after the search result
+### 7. Display one line before and after the search result
 **`cat /var/log/dpkg.log | grep -C1 'configure curl'`**
 
-### 9. Display the fields 1 and 3 of /etc/passwd using cut
+### 8. Display the fields 1 and 3 of /etc/passwd using cut
 **`cat /etc/passwd | cut -d : -f 1,3'`**
 
-### 10. Display only field 1 /proc/cpuinfo
+### 9. Display only field 1 /proc/cpuinfo
 **`cat /proc/cpuinfo | cut -f 1`**
 
-### 11. Translate all 'e' to 'E'
+### 10. Translate all 'e' to 'E'
 **`cat /etc/ssh/ssh_config  | tr e E`**
 
-### 12. Translate everything to uppercase
+### 11. Translate everything to uppercase
 **`cat /etc/ssh/sshd_config  | tr [a-z] [A-Z]`**
 
-### 13. Translate all newlines into spaces
+### 12. Translate all newlines into spaces
 **`cat .bashrc  | tr '\n' ' '`**
 
-### 14. Count all lines, words and characters in a file
+### 13. Count all lines, words and characters in a file
 **`cat .bashrc  | wc -l`**  
 **`cat .bashrc  | wc -w`**  
 **`cat .bashrc  | wc -c`**
 
-### 15. Sort the output alphabetically
+### 14. Sort the output alphabetically
 **`cat /etc/passwd | sort`**
 
-### 16. Remove duplicates from a sorted list
+### 15. Remove duplicates from a sorted list
 **`cat /var/log/dpkg.log | cut -d ' ' -f 3 | sort | uniq`**
 
-### 17. Change ip address in a config file using sed
+### 16. Change ip address in a config file using sed
 **`cat /etc/resolv.conf | sed 's/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/127.0.0.1/g'`**
 ```
 dkofler@ibk-tr-deb01:~$ cat /etc/resolv.conf
@@ -109,7 +113,7 @@ nameserver 127.0.0.1
 nameserver 127.0.0.1
 ```
 
-### 18. Find all .conf files in /etc
+### 17. Find all .conf files in /etc
 **`find /etc -maxdepth 1 -name '*.conf'`**
 ```
 dkofler@ibk-tr-deb00:~$ find /etc -maxdepth 1 -name '*.conf'
@@ -136,7 +140,7 @@ dkofler@ibk-tr-deb00:~$ find /etc -maxdepth 1 -name '*.conf'
 /etc/nsswitch.conf
 /etc/fuse.conf
 ```
-### 19. Find all .gz files in /var/log of the type file
+### 18. Find all .gz files in /var/log of the type file
 **`find /var/log/ -type f -name '*.gz' 2> /dev/null`**
 ```
 dkofler@ibk-tr-deb00:~$ find /var/log/ -type f -name '*.gz' 2> /dev/null

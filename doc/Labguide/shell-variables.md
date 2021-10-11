@@ -44,8 +44,6 @@ Hostname
 ```
 dkofler@ibk-tr-deb01:~$ echo $myvar
 Slayer
-dkofler@ibk-tr-deb01:~$ echo $myvar
-Slayer
 dkofler@ibk-tr-deb01:~$ echo "$myvar"
 Slayer
 dkofler@ibk-tr-deb01:~$ echo '$myvar'
