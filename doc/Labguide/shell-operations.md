@@ -118,9 +118,10 @@ dkofler@ibk-tr-deb01:~$ rm file1 && echo It worked! || echo It failed!
 rm: cannot remove 'file1': No such file or directory
 It failed!
 ```
-
+```
 dkofler@ibk-tr-deb01:~$ echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.
 Lets print an ampersand &; Then print some other chars like |, ' and <.
+```
 
 ### 14. Escape the special characters we used before
 **`echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.`**
