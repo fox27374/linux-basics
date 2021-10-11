@@ -180,7 +180,7 @@ dkofler@ibk-tr-deb01:~$ mkdir nts2/subdir2
 mkdir: cannot create directory ‘nts2/subdir2’: No such file or directory
 ```
 ### 18. Create a new directory with a subdirectory and the -p option
-**`mkdir nts2/subdir2`**  
+**`mkdir -p nts2/subdir2`**  
 **`ls -l nts2`**
 ```
 dkofler@ibk-tr-deb01:~$ ls -l nts2/
@@ -199,4 +199,4 @@ rmdir: failed to remove 'nts2': Directory not empty
 ```
 
 ### 21. Delete the subdir2 directory with the -p option
-**`rmdir nts2/subdir2`**
+**`rmdir -p nts2/subdir2`**

@@ -117,7 +117,7 @@ file2
 dkofler@ibk-tr-deb01:~$ cp -r dir2 dir3
 dkofler@ibk-tr-deb01:~$ ls -l dir3
 total 0
--rw-r--r-- 1 dkofler dkofler 0 Mar  7 21:10 file2
+drwxr-xr-x 2 dkofler dkofler 4096 Oct 11 14:19 dir2
 ```
 
 ### 9. Copy multiple files to a directory
