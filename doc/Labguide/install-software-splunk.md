@@ -12,7 +12,7 @@ Use the following commands to navigate through the filesystem:
 ## Tasks
 ### 1. Download the Splunk UF
 This copies a tar file containing software to the directory you are currently in  
-**`wget -O splunkforwarder-8.1.2-545206cc9f70-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.1.2&product=universalforwarder&filename=splunkforwarder-8.1.2-545206cc9f70-Linux-x86_64.tgz&wget=true'`**  
+**`wget -O splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz 'https://download.splunk.com/products/universalforwarder/releases/8.2.2.1/linux/splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz'`**  
 
 ### 2. Move the file to the /opt directory
 **`sudo mv splunkforwarder-8.1.2-545206cc9f70-Linux-x86_64.tgz /opt/`**  

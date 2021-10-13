@@ -18,7 +18,7 @@
 ### 5. Copy the file to the home folder of the remote system
 Username: remoteuser  
 Password: remoteuser  
-**`scp file-trXX remoteuser@ibk-tr-deb00.ntslab.loc:~`** 
+**`scp file-trXX remoteuser@ibk-lnx-tr00.ntslab.loc:~`** 
 
 ### 6. Copy the file of one of your lab colleagues to your home directory
 Username: remoteuser  
