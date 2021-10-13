@@ -15,12 +15,12 @@ This copies a tar file containing software to the directory you are currently in
 **`wget -O splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz 'https://download.splunk.com/products/universalforwarder/releases/8.2.2.1/linux/splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz'`**  
 
 ### 2. Move the file to the /opt directory
-**`sudo mv splunkforwarder-8.1.2-545206cc9f70-Linux-x86_64.tgz /opt/`**  
+**`sudo mv splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz /opt/`**  
 
 ### 3. Change to the /opt directory
 
 ### 4. Extract the package
-**`sudo tar -xf splunkforwarder-8.1.2-545206cc9f70-Linux-x86_64.tgz`**  
+**`sudo tar -xf splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz`**  
 
 ### 5. Add a user with the following settings
 * name: splunk
