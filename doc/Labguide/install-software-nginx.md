@@ -88,7 +88,7 @@ server {
 ### 10. Start the nginx service
 ### 11. Find the port that nginx is listening on
 ### 12. Open a browser and visit your new website (replace XX with your student number)
-**`http://ibk-tr-debXX.ntslab.loc:<PORT>`**
+**`http://ibk-lnx-trXX.ntslab.loc:<PORT>`**
 
 ### 13. In your home directory, create a link to the html folder
 **`ln -s /var/www/ntslab/html html`**
