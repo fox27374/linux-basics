@@ -55,7 +55,7 @@ dkofler@ibk-tr-deb01:~$ ip address show dev ens192 | grep -w 'inet' | awk '{prin
 172.24.88.112/24
 ```
 
-### 6. Prevent a command from beingrecorded in the history (space before the command)
+### 6. Prevent a command from being recorded in the history (space before the command)
 **`echo Password is abcdef`**  
 &nbsp;**` echo Password is ghijkl`**  
 **`history 3`**

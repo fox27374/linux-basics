@@ -32,9 +32,3 @@ all:
             linux_user: tr11
         ibk-lnx-tr12.ntslab.loc:
             linux_user: tr12
-        ibk-lnx-tr13.ntslab.loc:
-            linux_user: tr13
-        ibk-lnx-tr14.ntslab.loc:
-            linux_user: tr14
-        ibk-lnx-tr15.ntslab.loc:
-            linux_user: tr15
