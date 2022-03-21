@@ -89,7 +89,7 @@ Hello2
 ### 10. Combine commands with a logical AND
 **`sleep 5 && ping -c 3 www.google.at`**
 
-### 11. Produce an error to that the 2nd command is not executed
+### 11. Produce an error so that the 2nd command is not executed
 **`sleep F && ping -c 3 www.google.at`**
 
 ### 12. Combine commands with a logical OR
