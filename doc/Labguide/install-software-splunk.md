@@ -57,25 +57,28 @@ When asked, provide the following credentials
 **`ExecStartPost=/bin/bash -c "chown -R splunk:splunk /sys/fs/cgroup/cpu/system.slice/%n"`**
 **`ExecStartPost=/bin/bash -c "chown -R splunk:splunk /sys/fs/cgroup/memory/system.slice/%n"`**
 
-### 18. Start splunk using systemd
+### 18. Reload systemd systemd to read the changed config file
+**`sudo systemctl daemon-reload`**
+
+### 19. Start splunk using systemd
 **`sudo systemctl start SplunkForwarder.service`**
 
-### 19. Check the status of the splunk service
+### 20. Check the status of the splunk service
 **`sudo systemctl status SplunkForwarder.service`**
 
-### 20. su to the splunk user
-### 21. Change to the /opt/splunkforwarder/bin directory
-### 22. Execute the command to connect splunk to the depoyment server
+### 21. su to the splunk user
+### 22. Change to the /opt/splunkforwarder/bin directory
+### 23. Execute the command to connect splunk to the depoyment server
 **`./splunk set deploy-poll spl-master.ntslab.loc:8089`**  
 When asked, provide the admin credentials  
 * administrator username: admin
 * administrator password: admin#splunk  
 
-### 23. Exit the splunk user environment
-### 24. Restart splunk using systemd
+### 24. Exit the splunk user environment
+### 25. Restart splunk using systemd
 **`sudo systemctl restart SplunkForwarder.service`**
 
-### 25. Enable automatic startup of splunk using systemd
+### 26. Enable automatic startup of splunk using systemd
 **`sudo systemctl enable SplunkForwarder.service`**
 
-### 26. Check the port splunk is using for communication
+### 27. Check the port splunk is using for communication
