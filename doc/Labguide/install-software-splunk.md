@@ -66,7 +66,7 @@ When asked, provide the following credentials
 ### 20. su to the splunk user
 ### 21. Change to the /opt/splunkforwarder/bin directory
 ### 22. Execute the command to connect splunk to the depoyment server
-**`./splunk set deploy-poll ibk-splunk-dep.ntslab.loc:8089`**  
+**`./splunk set deploy-poll spl-master.ntslab.loc:8089`**  
 When asked, provide the admin credentials  
 * administrator username: admin
 * administrator password: admin#splunk  
