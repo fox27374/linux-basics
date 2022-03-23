@@ -12,7 +12,7 @@
 **`sudo tail -f /var/log/nginx/access.log`**
 
 ### 3. Access the previously created webpage with your browser
-**`http://ibk-tr-debXX.ntslab.loc:<PORT>`**
+**`http://ibk-trXX.ntslab.loc:<PORT>`**
 
 ### 4. Watch the access.log
 ### 5. Stop the tail command with [CTRL+c]
