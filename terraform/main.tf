@@ -150,7 +150,7 @@ resource "aws_instance" "bastion" {
   subnet_id   = aws_subnet.linux-training-public.id
   security_groups = [ aws_security_group.linux-training-public.id ]
   key_name = "dkofler-key"
-  user_data = "${file("user_data.txt")}"
+  user_data = "${file("user_data.sh")}"
   tags = {
     Name = var.LT["bastion_name"]
   }
