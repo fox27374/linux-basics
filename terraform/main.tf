@@ -144,6 +144,7 @@ resource "aws_security_group_rule" "public-egress" {
   security_group_id = aws_security_group.linux-training-public.id
 }
 
+# Create multiple EC2 instances
 resource "aws_instance" "bastion" {
   #count = var.LT["ec2_count"]
   ami           = var.LT["ec2_ami"]
