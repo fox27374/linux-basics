@@ -145,6 +145,7 @@ resource "aws_security_group_rule" "public-egress" {
 }
 
 resource "aws_instance" "bastion" {
+  #count = var.LT["ec2_count"]
   ami           = var.LT["ec2_ami"]
   instance_type = var.LT["ec2_instance_type"]
   subnet_id   = aws_subnet.linux-training-public.id

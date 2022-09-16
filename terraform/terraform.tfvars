@@ -9,6 +9,7 @@ LT = {
     sn_public_name = "linux-training-public"
     ec2_instance_type = "t2.micro"
     ec2_ami = "ami-0f98479f8cd5b63f6" # Debian
+    ec2_count = 1
     bastion_name = "bastion-linux-training"
     sg_public_name = "linux-training-public"
 }
