@@ -1,61 +1,61 @@
-resource "aws_security_group" "linux-training-public" {
-  name = "linux-training-public"
-  vpc_id =  aws_vpc.linux-training.id
+resource "aws_security_group" "public" {
+  name        = "Allow from public"
+  description = "Allow from public"
+  vpc_id      = aws_vpc.linux-training.id
+
+  ingress {
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  ingress {
+    description      = "Custom HTTP"
+    from_port        = 8080
+    to_port          = 8080
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
 
   tags = {
-    Name = var.SEC["sg_public_name"]
+    Name = "Allow from public"
   }
 }
 
-resource "aws_security_group" "linux-training-private" {
-  name = "linux-training-private"
-  vpc_id =  aws_vpc.linux-training.id
+resource "aws_security_group" "private" {
+  name        = "Allow from Bastion"
+  description = "Allow from Bastion"
+  vpc_id      = aws_vpc.linux-training.id
+
+  ingress {
+    description      = "SSH from Bastion"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    security_groups  = [aws_security_group.public.id]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
 
   tags = {
-    Name = var.SEC["sg_private_name"]
+    Name = "Allow from Bastion"
   }
-}
-
-resource "aws_security_group_rule" "public-ssh" {
-  description       = "Allow SSH"
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.linux-training-public.id
-}
-
-resource "aws_security_group_rule" "public-web" {
-  description       = "Allow port 8080"
-  type              = "ingress"
-  from_port         = 8080
-  to_port           = 8080
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.linux-training-public.id
-}
-
-resource "aws_security_group_rule" "public-egress" {
-  description       = "Allow any"
-  type              = "egress"
-  from_port         = 0
-  to_port           = 0
-  protocol          = "-1"
-  cidr_blocks       = ["0.0.0.0/0"]
-  ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.linux-training-public.id
-}
-
-resource "aws_security_group_rule" "private-ssh" {
-  description       = "Allow SSH from bastion host"
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.linux-training-private.id
 }

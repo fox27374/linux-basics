@@ -7,26 +7,25 @@ GEN = {
 
 # Network variables
 NW = {
-    vpc_name = "linux-training"
-    vpc_cidr = "10.42.22.0/25"
+    vpc_name        = "linux-training"
+    vpc_cidr        = "10.42.22.0/25"
     sn_private_cidr = "10.42.22.0/26"
-    sn_private_name = "linux-training-private"
-    sn_public_cidr = "10.42.22.64/26"
-    sn_public_name = "linux-training-public"
+    sn_private_name = "private"
+    sn_public_cidr  = "10.42.22.64/26"
+    sn_public_name  = "public"
 }
 
 # Security variables
 SEC = {
-    sg_public_name = "linux-training-public"
-    sg_private_name = "linux-training-private"
+    sg_public_name  = "public"
+    sg_private_name = "private"
 }
 
 # EC2 variables
 EC2 = {
     instance_type = "t2.micro"
-    ami = "ami-0f98479f8cd5b63f6" # Debian
-    public_count = 1
+    ami           = "ami-0f98479f8cd5b63f6" # Debian
     private_count = 1
-    student_name = "student"
-    bastion_name = "bastion"
+    student_name  = "tr"
+    bastion_name  = "bastion"
 }
