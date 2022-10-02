@@ -9,6 +9,7 @@ Host ${instance.private_ip}
   User ansible
   IdentityFile ~/.ssh/id_aws_ansible
   ProxyJump ${bastion_instance.public_dns}
+  
 %{ endfor ~}
 
 
