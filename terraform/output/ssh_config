@@ -1,0 +1,28 @@
+Host ec2-52-214-223-30.eu-west-1.compute.amazonaws.com
+  HostName ec2-52-214-223-30.eu-west-1.compute.amazonaws.com
+  User ansible
+  IdentityFile ~/.ssh/id_aws_ansible
+
+Host 10.42.22.52
+  HostName 10.42.22.52
+  User ansible
+  IdentityFile ~/.ssh/id_aws_ansible
+  ProxyJump ec2-52-214-223-30.eu-west-1.compute.amazonaws.com
+
+
+
+
+
+
+all:
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  children:
+    bastion:
+      hosts:
+        ec2-52-214-223-30.eu-west-1.compute.amazonaws.com:
+    private:
+      hosts:
+        10.42.22.52:
+    
+        

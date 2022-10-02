@@ -3,8 +3,8 @@
   roles:
     - ../roles/common
   serial: 50
-  vars_files:
-    - passwd.yml
+  #vars_files:
+  #  - passwd.yml
   vars:
     - deployment_task: install_packages.yml
   become: yes

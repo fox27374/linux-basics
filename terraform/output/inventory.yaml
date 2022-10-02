@@ -2,11 +2,11 @@ all:
   vars:
     ansible_python_interpreter: /usr/bin/python3
   children:
-    trainer:
+    bastion:
       hosts:
         ec2-52-214-223-30.eu-west-1.compute.amazonaws.com:
-
-    students:
+    private:
       hosts:
         10.42.22.52:
-
+    
+        

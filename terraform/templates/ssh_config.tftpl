@@ -1,0 +1,32 @@
+Host ${bastion_instance.public_dns}
+  HostName ${bastion_instance.public_dns}
+  User ansible
+  IdentityFile ~/.ssh/id_aws_ansible
+
+%{ for instance in private_instances ~}
+Host ${instance.private_ip}
+  HostName ${instance.private_ip}
+  User ansible
+  IdentityFile ~/.ssh/id_aws_ansible
+  ProxyJump ${bastion_instance.public_dns}
+%{ endfor ~}
+
+
+
+
+
+
+all:
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  children:
+    bastion:
+      hosts:
+        ${bastion_instance.public_dns}:
+    private:
+      hosts:
+    %{ for instance in private_instances ~}
+    ${instance.private_ip}:
+    %{ endfor ~}
+
+        

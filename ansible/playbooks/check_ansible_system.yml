@@ -4,8 +4,8 @@
   roles:
     - ../roles/common
   serial: 50
-  vars_files:
-    - passwd.yml
+  #vars_files:
+  #  - passwd.yml
   vars:
     - deployment_task: check_system.yml
   become: yes
