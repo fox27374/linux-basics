@@ -25,3 +25,12 @@ resource "local_file" "ssh_config" {
   )
   filename = "output/ssh_config"
 }
+
+resource "local_file" "nginx_config" {
+  content = templatefile("${path.module}/templates/nginx_config.tftpl",
+    {
+      private_instances = aws_instance.private.*
+    }
+  )
+  filename = "output/linux-training.conf"
+}
