@@ -2,4 +2,4 @@ Host 10.42.22.*
   User ansible
   IdentityFile ~/.ssh/id_aws_ansible
   StrictHostKeyChecking no
-  ProxyJump ${bastion_instance.public_dns}
+  ProxyJump ec2-54-246-154-96.eu-west-1.compute.amazonaws.com
