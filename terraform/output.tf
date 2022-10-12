@@ -5,7 +5,8 @@ output "bastion-dns-name" {
 
 resource "local_file" "ansible_inventory" {
   depends_on = [
-    aws_instance.private
+    aws_instance.private,
+    aws_eip.bastion
   ]
   content = templatefile("${path.module}/templates/inventory.tftpl",
     {

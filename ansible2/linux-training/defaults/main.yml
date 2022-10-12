@@ -2,3 +2,4 @@
 # defaults file for linux-training
 add_linux_user: True
 add_user_sudo: True
+install_otel_collector: True

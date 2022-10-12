@@ -11,3 +11,8 @@
   when:
     - add_user_sudo
 
+- name: Install OTEL collector
+  ansible.builtin.include_tasks: install_otel_collector.yml
+  when:
+    - install_otel_collector
+
