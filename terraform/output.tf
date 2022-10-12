@@ -13,7 +13,7 @@ resource "local_file" "ansible_inventory" {
       private_instances = aws_instance.private.*
     }
   )
-  filename = "output/inventory.yaml"
+  filename = "../ansible2/inventory.yml"
 }
 
 resource "local_file" "ssh_config" {
@@ -32,5 +32,5 @@ resource "local_file" "nginx_config" {
       private_instances = aws_instance.private.*
     }
   )
-  filename = "output/linux-training.conf"
+  filename = "../ansible2/bastion/files/linux-training.conf"
 }

@@ -1,0 +1,13 @@
+---
+# tasks file for linux-training
+
+- name: Add linux user
+  ansible.builtin.include_tasks: add_linux_user.yml
+  when:
+    - add_linux_user
+
+- name: Add user to sudo group
+  ansible.builtin.include_tasks: add_user_sudo.yml
+  when:
+    - add_user_sudo
+

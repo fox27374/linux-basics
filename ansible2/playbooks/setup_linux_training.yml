@@ -1,0 +1,14 @@
+- name: Setup linux training environment
+  hosts: all
+  roles:
+    - role: linux-training
+
+- name: Setup bastion
+  hosts: bastion
+  roles:
+    - role: bastion
+  
+- name: Setup student
+  hosts: private
+  roles:
+    - role: student

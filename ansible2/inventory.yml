@@ -5,11 +5,8 @@ all:
   children:
     bastion:
       hosts:
-        ${bastion_instance.public_dns}:
+        ec2-99-80-22-68.eu-west-1.compute.amazonaws.com:
     private:
       hosts:
-    %{ for instance in private_instances ~}
-    ${instance.private_ip}:
-    %{ endfor ~}
-
-        
+        10.42.22.55:
+        10.42.22.40:
