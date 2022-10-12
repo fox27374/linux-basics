@@ -6,5 +6,4 @@ docker_packages:
   - "curl"
   - "gnupg"
   - "lsb-release"
-  - "docker"
   - "docker.io"
