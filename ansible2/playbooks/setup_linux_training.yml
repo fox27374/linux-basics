@@ -12,3 +12,8 @@
   hosts: private
   roles:
     - role: student
+
+- name: Setup lab
+  hosts: private
+  roles:
+    - role: lab
