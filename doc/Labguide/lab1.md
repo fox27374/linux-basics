@@ -61,8 +61,8 @@ Use the following commands to navigate through the filesystem:
 **`sudo chmod -R 755 /var/www/html/`**  
 
 ### 8. Rename the wordpress sample config and delete the default index file
-**`cd /var/www/html/`** 
-**`sudo mv wp-config-sample.php wp-config.php`** 
+**`cd /var/www/html/`**  
+**`sudo mv wp-config-sample.php wp-config.php`**  
 **`sudo rm -rf index.html`** 
 
 ### 9. Edit the file wp-config.php and set the values for the DB connection
