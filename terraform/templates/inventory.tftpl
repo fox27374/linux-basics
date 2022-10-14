@@ -8,8 +8,13 @@ all:
         ${bastion_instance.public_dns}:
     private:
       hosts:
-    %{ for instance in private_instances ~}
-    ${instance.private_ip}:
-    %{ endfor ~}
+        %{~ for instance in private_instances ~}
+        ${ instance.private_ip }:
+        %{~ endfor ~}
+    lab:
+      hosts:
+        %{~ for instance in lab_instances ~}
+        ${ instance.private_ip }:
+        %{~ endfor ~}
 
         

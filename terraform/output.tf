@@ -6,12 +6,14 @@ output "bastion-dns-name" {
 resource "local_file" "ansible_inventory" {
   depends_on = [
     aws_instance.private,
+    aws_instance.lab,
     aws_eip.bastion
   ]
   content = templatefile("${path.module}/templates/inventory.tftpl",
     {
       bastion_instance = aws_instance.bastion
       private_instances = aws_instance.private.*
+      lab_instances = aws_instance.lab.*
     }
   )
   filename = "../ansible2/inventory.yml"
@@ -30,7 +32,7 @@ resource "local_file" "ssh_config" {
 resource "local_file" "nginx_config" {
   content = templatefile("${path.module}/templates/nginx_config.tftpl",
     {
-      private_instances = aws_instance.private.*
+      lab_instances = aws_instance.lab.*
     }
   )
   filename = "../ansible2/bastion/files/linux-training.conf"

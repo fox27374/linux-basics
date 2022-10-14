@@ -55,6 +55,22 @@ resource "aws_security_group" "private" {
     security_groups  = [aws_security_group.public.id]
   }
 
+  ingress {
+    description      = "ICMP from private"
+    from_port        = 8
+    to_port          = 0
+    protocol         = "icmp"
+    security_groups  = [aws_security_group.pprivate.id]
+  }
+
+  ingress {
+    description      = "SQL from private"
+    from_port        = 3306
+    to_port          = 3306
+    protocol         = "tcp"
+    security_groups  = [aws_security_group.pprivate.id]
+  }
+
   egress {
     from_port        = 0
     to_port          = 0

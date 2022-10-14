@@ -1,6 +1,8 @@
 - name: Setup linux training environment
   hosts: all
   become: yes
+  vars_files:
+    - ../vault.yml
   roles:
     - role: linux-training
 
@@ -15,6 +17,6 @@
     - role: student
 
 - name: Setup lab
-  hosts: private
+  hosts: lab
   roles:
     - role: lab

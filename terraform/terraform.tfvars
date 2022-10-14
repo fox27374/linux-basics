@@ -27,6 +27,7 @@ EC2 = {
     #ami           = "ami-0f98479f8cd5b63f6" # Debian
     ami           = "ami-096800910c1b781ba" # Ubuntu
     private_count = 2
+    lab_count = 3
     student_name  = "tr"
     bastion_name  = "bastion"
 }

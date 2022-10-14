@@ -5,10 +5,15 @@ all:
   children:
     bastion:
       hosts:
-        ec2-54-74-111-238.eu-west-1.compute.amazonaws.com:
+        ec2-54-75-178-225.eu-west-1.compute.amazonaws.com:
     private:
       hosts:
-        10.42.22.61:
-        10.42.22.35:
-    
+        10.42.22.28:
+        10.42.22.7:
+    lab:
+      hosts:
+        10.42.22.58:
+        10.42.22.51:
+        10.42.22.46:
+
         
