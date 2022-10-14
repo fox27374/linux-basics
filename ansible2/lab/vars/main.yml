@@ -7,3 +7,7 @@ docker_packages:
   - "gnupg"
   - "lsb-release"
   - "docker.io"
+packages:
+  - "vim"
+  - "git"
+  - "net-tools"

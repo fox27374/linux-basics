@@ -1,3 +1,6 @@
 ---
 # vars file for student
-packages: ["vim", "git", "net-tools"]
+packages:
+  - "vim"
+  - "git"
+  - "net-tools"

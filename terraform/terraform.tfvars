@@ -26,8 +26,8 @@ EC2 = {
     instance_type = "t2.micro"
     #ami           = "ami-0f98479f8cd5b63f6" # Debian
     ami           = "ami-096800910c1b781ba" # Ubuntu
-    private_count = 2
-    lab_count = 3
+    private_count = 1
+    lab_count = 2
     student_name  = "tr"
     bastion_name  = "bastion"
 }

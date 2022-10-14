@@ -34,8 +34,11 @@ Use the following commands to navigate through the filesystem:
 ### 2. exec into the mysql container
 **`docker exec -it wordpress-mysql mysql -u root -p`**  
 
-### 3. Create a table for the wordpress website
-**`create table wordpress;`**
+### 3. Create a table, user and privileges for the wordpress website
+**`create table wordpress;`**  
+**`CREATE USER 'wp_user'@'%' IDENTIFIED WITH mysql_native_password BY '<WP USER PASSWORD>';`** 
+**`GRANT ALL ON wordpress.* TO 'wp_user'@'%';`**  
+**`FLUSH PRIVILEGES;`**  
 
 ### 4. Exit the container
 **`exit;`** 
@@ -64,7 +67,7 @@ Use the following commands to navigate through the filesystem:
 
 ### 9. Edit the file wp-config.php and set the values for the DB connection
 * DB_NAME: wordpress
-* DB_USER: root
+* DB_USER: wp_user
 * DB_PASSWORD: `<DB ROOT PASSWORD>`
 * DB_HOST: `<Server2 IP>`
 

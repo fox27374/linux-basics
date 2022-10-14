@@ -1,6 +1,6 @@
 resource "aws_security_group" "public" {
-  name        = "Allow from public"
-  description = "Allow from public"
+  name        = "Public"
+  description = "Public"
   vpc_id      = aws_vpc.linux-training.id
 
   ingress {
@@ -30,13 +30,13 @@ resource "aws_security_group" "public" {
   }
 
   tags = {
-    Name = "Allow from public"
+    Name = "Public"
   }
 }
 
 resource "aws_security_group" "private" {
-  name        = "Allow from Bastion"
-  description = "Allow from Bastion"
+  name        = "Private"
+  description = "Private"
   vpc_id      = aws_vpc.linux-training.id
 
   ingress {
@@ -60,7 +60,7 @@ resource "aws_security_group" "private" {
     from_port        = 8
     to_port          = 0
     protocol         = "icmp"
-    security_groups  = [aws_security_group.pprivate.id]
+    cidr_blocks      = [var.NW["sn_private_cidr"]]
   }
 
   ingress {
@@ -68,7 +68,7 @@ resource "aws_security_group" "private" {
     from_port        = 3306
     to_port          = 3306
     protocol         = "tcp"
-    security_groups  = [aws_security_group.pprivate.id]
+    cidr_blocks      = [var.NW["sn_private_cidr"]]
   }
 
   egress {
@@ -80,6 +80,6 @@ resource "aws_security_group" "private" {
   }
 
   tags = {
-    Name = "Allow from Bastion"
+    Name = "Private"
   }
 }
