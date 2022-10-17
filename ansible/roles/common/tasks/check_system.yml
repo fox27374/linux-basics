@@ -1,3 +1,0 @@
----
-- name: Check ansible reachability
-  ansible.builtin.ping:

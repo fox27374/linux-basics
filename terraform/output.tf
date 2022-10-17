@@ -16,7 +16,7 @@ resource "local_file" "ansible_inventory" {
       lab_instances = aws_instance.lab.*
     }
   )
-  filename = "../ansible2/inventory.yml"
+  filename = "../ansible/inventory.yml"
 }
 
 resource "local_file" "ssh_config" {
@@ -35,5 +35,5 @@ resource "local_file" "nginx_config" {
       lab_instances = aws_instance.lab.*
     }
   )
-  filename = "../ansible2/bastion/files/linux-training.conf"
+  filename = "../ansible/bastion/files/linux-training.conf"
 }

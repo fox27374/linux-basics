@@ -1,6 +1,0 @@
----
-- name: Remove the user
-  ansible.builtin.user:
-    name: "{{ linux_user }}"
-    state: absent
-    remove: yes
