@@ -30,6 +30,9 @@ The whole training environment can be deployed via terraform and ansible. Have a
 20) [Networking](doc/Labguide/networking.md)
 21) [Networking SCP](doc/Labguide/networking-scp.md)
 22) [Networking UFW](doc/Labguide/networking-ufw.md)
-23) [Install software: splunk](doc/Labguide/install-software-splunk.md)
 
-All commands are tested and based on [Debian 11](https://www.debian.org/). IP addresses and FQDN names are internal lab IPs and names.
+### Labs
+1) [On premises Wordpress](doc/Labguide/lab1.md)
+2) [Splunk with universal forwarder](doc/Labguide/lab2.md)
+
+All commands are tested and based on [Ubuntu 22.04](https://ubuntu.com/). IP addresses and FQDN names are internal lab IPs and names.
