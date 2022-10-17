@@ -69,7 +69,7 @@ When asked, provide the following credentials
 ### 16. Open TCP port 8089/tcp in the UFW
 
 ### 17. Comment the following lines in the /etc/systemd/system/SplunkForwarder.service file (add a '#' in front)
-**`ExecStartPost=/bin/bash -c "chown -R splunk:splunk /sys/fs/cgroup/cpu/system.slice/%n"`**
+**`ExecStartPost=/bin/bash -c "chown -R splunk:splunk /sys/fs/cgroup/cpu/system.slice/%n"`**  
 **`ExecStartPost=/bin/bash -c "chown -R splunk:splunk /sys/fs/cgroup/memory/system.slice/%n"`**
 
 ### 18. Reload systemd systemd to read the changed config file
