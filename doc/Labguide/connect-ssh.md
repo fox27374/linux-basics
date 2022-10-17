@@ -1,35 +1,28 @@
 # Connect via SSH
-## Windows - MAC
-### Putty
-Open [Putty](http://putty.org) and type the IP address of your lab linux installation. The SSH port is 22.
 
-![Putty](img/00-putty01.png)
+## SecureCRT
+SecureCRT can be downloaded here: [SecureCRT](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt)
 
-You can also save the session by providing a name in the "Saved Sessions" field and clicking the "Save" button.
+### During the installation, select "Without a configuration passphrase".  
 
-### SecureCRT
-Open [SecureCRT](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) and expand the session manager on the left side. In the session manager, click on the "Plus" button to add a new session.
+![SecureCRT01](img/00_install.png)
 
-![SecureCRT01](img/00-securecrt01.png)
+### Go to Help - Enter Lincense Data and paste the license key provided.
 
-Provide the IP address of your lab linux installation. The SSH port is 22.
+![SecureCRT02](img/01_license.png)
 
-![SecureCRT02](img/00-securecrt02.png)
+### Go to Tools - Manage saved credentials and add the private key
 
-The session is saved automatically and you can reuse it.
+![SecureCRT03](img/03_manage_credentials.png)
+![SecureCRT04](img/04_manage_credentials_key.png)
 
-## Linux
-No additional software is needed, just open a terminal session and directly connect via the "ssh" command.
+### Create the bastion host session by clicking the plus sign in the session manager
+![SecureCRT05](img/05_bastion_session.png)
+![SecureCRT06](img/06_bastion_session_2.png)
 
-**`ssh username@<IP address of the lab system>`**
+### Create the student session
+![SecureCRT07](img/07_student_session.png)
+![SecureCRT07](img/08_student_session_2.png)
 
-## Tasks
-### 1. Change user password
-**`passwd`**
-```
-dkofler@ibk-tr-deb00:~$ passwd
-Changing password for dkofler.
-Current password:
-New password:
-Retype new password:
-```
+### (Optional) Go to Options - Edit default session to edit the theme
+![SecureCRT07](img/09_theme.png)
