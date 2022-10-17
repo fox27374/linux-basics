@@ -6,7 +6,7 @@ all:
     bastion:
       hosts:
         ${bastion_instance.public_dns}:
-    private:
+    student:
       hosts:
         %{~ for instance in private_instances ~}
         ${ instance.private_ip }:

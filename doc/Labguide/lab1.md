@@ -12,7 +12,7 @@ Use the following commands to navigate through the filesystem:
 | systemctl | controll processes |
 | docker | container runtime |
 ---
-
+This lab mainly follows [this](https://www.tecmint.com/install-wordpress-in-ubuntu-lamp-stack/) guide.
 ## Tasks
 ## Server 1 ##
 ### 1. Install apache webserver
