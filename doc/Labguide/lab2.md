@@ -20,6 +20,7 @@ Refer to the [this](https://hub.docker.com/r/splunk/splunk/#documentation) docum
 Dont forget to forward the following ports:
 * 80:8000
 * 8089:8089
+* 9997:9997
 
 ### 2. Check if the container is up and running
 **`docker ps`**  
@@ -97,3 +98,34 @@ When asked, provide the admin credentials
 **`sudo systemctl enable SplunkForwarder.service`**
 
 ### 27. Check the port splunk is using for communication
+
+### 28. su to the splunk user
+
+### 29. Create a new directory and config file
+**`mkdir -p etc/apps/app_linux_lab/local`**
+
+### 30. Create a new file named outputs.conf in the newly created folder and paste the following content
+```ini
+[tcpout]
+defaultGroup=lab_indexers
+
+[tcpout:lab_indexers]
+server=<SERVER 1 IP>:9997
+```
+
+### 31. Create a new file named inputs.conf in the newly created folder and paste the following content
+```ini
+[monitor:///var/log/auth.log]
+```
+
+## Server 1 ##
+### 1. Login to you new Splunk server with the provided password
+
+### 2. Go settings - server settings - general and set the free diskspace limit to 500
+
+### 3. Go settings - server controls and restart splunk
+
+### 4. After the restart, log in again and go to the Search & Reporting app
+
+### 5. Execute the following search and check if the server 2 hostname shows up in the restults
+**`index=main | stats count by host`**

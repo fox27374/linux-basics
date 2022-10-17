@@ -71,6 +71,22 @@ resource "aws_security_group" "private" {
     cidr_blocks      = [var.NW["sn_private_cidr"]]
   }
 
+  ingress {
+    description      = "Splunk TCP from private"
+    from_port        = 8089
+    to_port          = 8089
+    protocol         = "tcp"
+    cidr_blocks      = [var.NW["sn_private_cidr"]]
+  }
+
+  ingress {
+    description      = "Splunk MGMT from private"
+    from_port        = 9997
+    to_port          = 9997
+    protocol         = "tcp"
+    cidr_blocks      = [var.NW["sn_private_cidr"]]
+  }
+
   egress {
     from_port        = 0
     to_port          = 0
