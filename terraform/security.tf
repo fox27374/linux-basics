@@ -40,51 +40,59 @@ resource "aws_security_group" "private" {
   vpc_id      = aws_vpc.linux-training.id
 
   ingress {
-    description      = "SSH from Bastion"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    security_groups  = [aws_security_group.public.id]
+    description     = "SSH from Bastion"
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
+    security_groups = [aws_security_group.public.id]
   }
 
   ingress {
-    description      = "HTTP from Bastion"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    security_groups  = [aws_security_group.public.id]
+    description     = "HTTP from Bastion"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
+    security_groups = [aws_security_group.public.id]
   }
 
   ingress {
-    description      = "ICMP from private"
-    from_port        = 8
-    to_port          = 0
-    protocol         = "icmp"
-    cidr_blocks      = [var.NW["sn_private_cidr"]]
+    description = "ICMP from private"
+    from_port   = 8
+    to_port     = 0
+    protocol    = "icmp"
+    cidr_blocks = [var.NW["sn_private_cidr"]]
   }
 
   ingress {
-    description      = "SQL from private"
-    from_port        = 3306
-    to_port          = 3306
-    protocol         = "tcp"
-    cidr_blocks      = [var.NW["sn_private_cidr"]]
+    description = "SSH from private"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [var.NW["sn_private_cidr"]]
   }
 
   ingress {
-    description      = "Splunk TCP from private"
-    from_port        = 8089
-    to_port          = 8089
-    protocol         = "tcp"
-    cidr_blocks      = [var.NW["sn_private_cidr"]]
+    description = "SQL from private"
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = [var.NW["sn_private_cidr"]]
   }
 
   ingress {
-    description      = "Splunk MGMT from private"
-    from_port        = 9997
-    to_port          = 9997
-    protocol         = "tcp"
-    cidr_blocks      = [var.NW["sn_private_cidr"]]
+    description = "Splunk TCP from private"
+    from_port   = 8089
+    to_port     = 8089
+    protocol    = "tcp"
+    cidr_blocks = [var.NW["sn_private_cidr"]]
+  }
+
+  ingress {
+    description = "Splunk MGMT from private"
+    from_port   = 9997
+    to_port     = 9997
+    protocol    = "tcp"
+    cidr_blocks = [var.NW["sn_private_cidr"]]
   }
 
   egress {

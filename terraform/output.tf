@@ -11,9 +11,9 @@ resource "local_file" "ansible_inventory" {
   ]
   content = templatefile("${path.module}/templates/inventory.tftpl",
     {
-      bastion_instance = aws_instance.bastion
+      bastion_instance  = aws_instance.bastion
       private_instances = aws_instance.private.*
-      lab_instances = aws_instance.lab.*
+      lab_instances     = aws_instance.lab.*
     }
   )
   filename = "../ansible/inventory.yml"
@@ -22,7 +22,7 @@ resource "local_file" "ansible_inventory" {
 resource "local_file" "ssh_config" {
   content = templatefile("${path.module}/templates/ssh_config.tftpl",
     {
-      bastion_instance = aws_instance.bastion
+      bastion_instance  = aws_instance.bastion
       private_instances = aws_instance.private.*
     }
   )

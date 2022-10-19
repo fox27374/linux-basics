@@ -27,7 +27,7 @@ resource "aws_subnet" "public" {
 
 # Create internet gateway
 resource "aws_internet_gateway" "linux-training" {
-  vpc_id =  aws_vpc.linux-training.id
+  vpc_id = aws_vpc.linux-training.id
   tags = {
     Name = var.NW["vpc_name"]
   }
@@ -45,28 +45,28 @@ resource "aws_nat_gateway" "linux-training" {
 
 # Routing table for public subnet
 resource "aws_route_table" "linux-training-public" {
-  vpc_id =  aws_vpc.linux-training.id
-    route {
-      cidr_block = "0.0.0.0/0"
-      gateway_id = aws_internet_gateway.linux-training.id
-    }
-    tags = {
+  vpc_id = aws_vpc.linux-training.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.linux-training.id
+  }
+  tags = {
     Name = var.NW["sn_public_name"]
   }
 }
 
 # Routing table for private subnet
 resource "aws_route_table" "private" {
-   vpc_id =  aws_vpc.linux-training.id
-    route {
-      cidr_block     = "0.0.0.0/0"
-      nat_gateway_id = aws_nat_gateway.linux-training.id
-      #gateway_id = aws_internet_gateway.linux-training.id
-   }
-   tags = {
+  vpc_id = aws_vpc.linux-training.id
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.linux-training.id
+    #gateway_id = aws_internet_gateway.linux-training.id
+  }
+  tags = {
     Name = var.NW["sn_private_name"]
   }
- }
+}
 
 # Associate routing tables with subnets
 resource "aws_route_table_association" "private" {

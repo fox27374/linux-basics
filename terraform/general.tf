@@ -10,22 +10,22 @@ terraform {
 
 # Generalvariables
 variable "GEN" {
-  type    = map  
+  type = map(any)
 }
 
 # Network variables
 variable "NW" {
-  type    = map  
+  type = map(any)
 }
 
 # Security variables
 variable "SEC" {
-  type    = map  
+  type = map(any)
 }
 
 # EC2 variables
 variable "EC2" {
-  type    = map  
+  type = map(any)
 }
 
 provider "aws" {
