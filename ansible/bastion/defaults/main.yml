@@ -1,4 +1,0 @@
----
-# defaults file for bastion
-install_packages: True
-copy_nginx_config: True

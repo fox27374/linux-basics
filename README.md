@@ -5,7 +5,7 @@ This guide is inteded to be used during a instructor-led training. Some chapters
 
 The basic structure is taken from [this](http://linux-training.be/linuxfun.pdf) awesome book by [Paul Cobbaut](http://www.linkedin.com/in/cobbaut). Even if the content is a little outdated, the main structure is very nice and perfect for Linux beginners.
 
-The whole training environment can be deployed via terraform and ansible. Have a look at the corresponding folders.
+The whole training environment can be deployed via terraform and ansible. Have a look at the [devops-infra](https://github.com/fox27374/devops-infra) repository.
 
 
 1) [Connect with SSH](doc/Labguide/connect-ssh.md)
