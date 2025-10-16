@@ -8,7 +8,7 @@ The basic structure is taken from [this](http://linux-training.be/linuxfun.pdf) 
 The whole training environment can be deployed via terraform and ansible. Have a look at the [devops-infra](https://github.com/fox27374/devops-infra) repository.
 
 
-1) [Connect with SSH](doc/Labguide/connect-ssh.md)
+1) [Connect to lab](doc/Labguide/connect-lab.md)
 2) [Man pages](doc/Labguide/man-pages.md)
 3) [Working with directories](doc/Labguide/working-with-dirs.md)
 4) [Working with files](doc/Labguide/working-with-files.md)
