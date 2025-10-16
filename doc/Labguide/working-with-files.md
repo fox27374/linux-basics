@@ -28,10 +28,10 @@ dkofler@ibk-tr-deb01:~$ file /usr/share/pixmaps/debian-logo.png
 /usr/share/pixmaps/debian-logo.png: PNG image data, 48 x 48, 8-bit/color RGBA, non-interlaced
 ```
 
-**`file /dev/sda1`**
+**`file /dev/nvme0n1`**
 ```
-dkofler@ibk-tr-deb01:~$ file /dev/sda1
-/dev/sda1: block special (8/1
+dkofler@ibk-tr-deb01:~$ file /dev/nvme0n1
+/dev/nvme0n1: block special (259/0)
 ```
 
 ### 2. Create files with touch
