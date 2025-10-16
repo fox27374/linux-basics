@@ -12,7 +12,7 @@
 
 ## Tasks
 ### 1. Display the first lines of a file
-**`head -n 5 .bash_history`**
+**`head -n 5 .zsh_history`**
 
 ### 2. Display the last lines of a file
 **`tail -15 /etc/services`**
@@ -36,21 +36,23 @@ fido		60179/tcp			# fidonet EMSI over TCP
 ```
 
 ### 3. Display the whole content of a file
-**`cat /etc/network/interfaces`**
+**`cat /etc/hosts`**
 ```
-dkofler@ibk-tr-deb01:~$ cat /etc/network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
+dkofler@ibk-tr-deb01:~$ cat /etc/hosts
+127.0.0.1 localhost
+# Splunk host and HEC endpoint
+10.42.22.27 splunk.lab.local
+10.42.22.27 hec.lab.local
+# Local lab DNS resolution
+10.42.22.32 lab032
 
-source /etc/network/interfaces.d/*
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-allow-hotplug ens192
-iface ens192 inet dhcp
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
 ```
 
 ### 4. Concatenate files
