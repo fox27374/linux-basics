@@ -7,14 +7,14 @@
 ---
 
 ## Tasks
-### 1. Create a directory and a file that you own
-**`mkdir permissions; touch permissions/file1`**  
+### 1. Create a directory and a file in the /tmp directory
+**`mkdir /tmp/permissions; touch /tmp/permissions/file1`**  
 
 ### 2. Copy a file owned by root with sudo to the new directory
-**`cd permissions/ && sudo cp /etc/resolv.conf .`**  
+**`cd /tmp/permissions/ && sudo cp /etc/resolv.conf .`**  
 **`ll`**  
 ```
-dkofler@ibk-tr-deb00:~/permissions$ ll
+dkofler@ibk-tr-deb00:/tmp/permissions$ ll
 total 4
 -rw-r--r-- 1 dkofler dkofler  0 Mar 15 16:22 file1
 -rw-r--r-- 1 root    root    84 Mar 15 16:25 resolv.conf
@@ -23,7 +23,7 @@ total 4
 **`cp /etc/resolv.conf resolv2.conf`**  
 **`ll`**
 ```
-dkofler@ibk-tr-deb00:~/permissions$ ll
+dkofler@ibk-tr-deb00:/tmp/permissions$ ll
 total 8
 -rw-r--r-- 1 dkofler dkofler  0 Mar 15 16:22 file1
 -rw-r--r-- 1 dkofler dkofler 84 Mar 15 16:26 resolv2.conf
@@ -34,36 +34,37 @@ total 8
 **`ll`**  
 **`cat resolv.conf`**
 ```
-dkofler@ibk-tr-deb00:~/permissions$ sudo chmod 600 resolv.conf
-dkofler@ibk-tr-deb00:~/permissions$ ll
+dkofler@ibk-tr-deb00:/tmp/permissions$ sudo chmod 600 resolv.conf
+dkofler@ibk-tr-deb00:/tmp/permissions$ ll
 total 8
 -rw-r--r-- 1 dkofler dkofler  0 Mar 15 16:22 file1
 -rw-r--r-- 1 dkofler dkofler 84 Mar 15 16:26 resolv2.conf
 -rw------- 1 root    root    84 Mar 15 16:46 resolv.conf
-dkofler@ibk-tr-deb00:~/permissions$ cat resolv.conf 
+dkofler@ibk-tr-deb00:/tmp/permissions$ cat resolv.conf 
 cat: resolv.conf: Permission denied
 ```
 
-### 5. Change the group owner to group1 and ass rw permissions
+### 5. Change the group owner to group1 and add rw permissions
 **`sudo chown root:group1 resolv.conf`**  
 **`sudo chmod g+rw resolv.conf`**  
 **`ll`**
 
 ### 6. su to user3 and edit the file
 **`su - user3`**  
-**`vi /home/<YOUR USER>/permissions/resolv.conf`**  
+**`vi /tmp/permissions/resolv.conf`**  
 **`exit`**
 
 ### 7. Add your user to group1 and print the file
-**`sudo usermod -aG <YOUR USER> group1`**  
+**`sudo usermod -aG student group1`**  
+**`newgrp group1`**  
 **`cat resolv.conf`**  
 
 ### 8. Remove the x permission of the permissions folder
-**`cd ~`**  
+**`cd ..`**  
 **`chmod -x permissions`**  
 **`cd permissions`**  
 ```
-dkofler@ibk-tr-deb00:~$ cd permissions/
+dkofler@ibk-tr-deb00:~$ cd /tmp/permissions/
 -bash: cd: permissions/: Permission denied
 ```
 
