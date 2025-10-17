@@ -15,59 +15,50 @@
 ---
 
 ## Tasks
-### 1. Uncomment an alias in .bashrc
+### 1. Create a new file and add content
 Open the file with vi  
-**`vi .bashrc`**  
-Search for a commented alias line  
-**`/#alias [ENTER]`**  
-Go down until you find the line "#alias ll='ls -l'"  
-**`n`**  
+**`vi testfile`**  
 Change to insert mode  
 **`i`**  
-Remove the "#" to uncomment the line  
+Write something
+**`This is my first vi experience`** 
 Change to command mode  
 **`[ESC]`**  
 Write the file and quit vi  
 **`:wq [ENTER]`**  
-Reload the file so that you can use the alias  
-**`source .bashrc`**  
-```
-dkofler@ibk-tr-deb01:~$ ll
--bash: ll: command not found
-dkofler@ibk-tr-deb01:~$ source .bashrc 
-dkofler@ibk-tr-deb01:~$ ll
-total 44
--rw-r--r-- 1 dkofler dkofler 1289 Mar 11 13:53 cert.txt
--rw-r--r-- 1 dkofler dkofler   32 Mar 11 16:58 content.txt
--rw-r--r-- 1 dkofler dkofler   32 Mar 11 17:00 copy.txt
-drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:12 dir3
-drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:16 dir-renamed
--rw-r--r-- 1 dkofler dkofler   54 Mar 14 17:28 error.txt
-```
+Check the file content 
+**`cat testfile`**  
 
-### 2. Remove a line from .bash_history
+### 2. Add some more content to the file
+Use cat and file redirect to insert some more content  
+**`cat /etc/resolv.conf >> testfile`**  
+Check the file content  
+**`cat testfile`**  
+
+### 3. Modify the file
 Open the file with vi  
-**`vi .bash_history`**  
-Go to line 32  
-**`:32 [ENTER]`**  
-Delete the whole line  
-**`dd`**  
+**`vi testfile`**  
+Search for nameserver  
+**`/server [ENTER]`**  
+Press n until you reach the nameserver entry  
+**`n`**  
+Copy the line  
+**`yyp`**  
+Change the IP from 127.0.0.53 to 8.8.8.8  
+Move the cursor to the end of the line and change the IP accordingly  
+**`i`**  
+Change to command mode  
+**`[ESC]`**  
 Write the file and quit vi  
 **`:wq [ENTER]`**  
 
-
-### 3. Edit a copy of resolv.conf
-Copy the file to your home directory   
-**`cp /etc/resolv.conf .`**  
+### 4. Delete something from the file
 Open the file with vi  
-**`vi resolv.conf`**  
-Move the cursor to the last nameserver entry  
-Copy the line  
-**`yy`**  
-Move the cursor two lines up and paste the copied line  
-**`p`**  
-Change the last octet to 23    
-**`i`**  
+**`vi testfile`**  
+Go to line number 10 and delete it  
+**`:10 [ENTER]`**  
+Delete the line  
+**`dd`**  
 Change to command mode  
 **`[ESC]`**  
 Write the file and quit vi  
