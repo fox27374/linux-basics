@@ -21,12 +21,12 @@ Open the file with vi
 Change to insert mode  
 **`i`**  
 Write something
-**`This is my first vi experience`** 
+**`This is my first vi experience`**  
 Change to command mode  
 **`[ESC]`**  
 Write the file and quit vi  
 **`:wq [ENTER]`**  
-Check the file content 
+Check the file content  
 **`cat testfile`**  
 
 ### 2. Add some more content to the file
