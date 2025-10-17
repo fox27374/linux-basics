@@ -3,9 +3,9 @@
 | Command | Description |
 | ---| --- |
 | echo | display passed arguments |
-| type | test if internal or external command |
 | which | search for binaries in the path variable |
 | alias | create an alias for a command |
+| history | show the command history |
 | ; | execute commands sequentially |
 | & | send command to background |
 | && | logical AND |
@@ -24,8 +24,8 @@ dkofler@ibk-tr-deb01:~$ which cd cat ls
 ```
 
 ### 2. Create an alias for the ls -lh command
-**`alias ll='ls -lh'`**  
-**`ll'`**
+**`alias lh='ls -lh'`**  
+**`lh'`**
 ```
 dkofler@ibk-tr-deb01:~$ ll
 total 40K
@@ -46,10 +46,10 @@ Hello2
 ```
 
 ### 4. Start a command and send it to the background
-**`ping -c 4 -i 7 blog.dot11.org &`**
+**`ping -c 4 -i 7 www.nts.eu > /dev/null &`**
 
 ### 5. Combine commands with a logical AND
-**`sleep 5 && ping -c 3 www.google.at`**
+**`sleep 3 && ping -c 3 www.google.at`**
 
 ### 6. Produce an error so that the 2nd command is not executed
 **`sleep F && ping -c 3 www.google.at`**
@@ -68,17 +68,16 @@ drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:12 dir3
 
 ### 8. Combine the two logical operators
 **`touch file1`**  
-**`rm file1 && echo It worked! || echo It failed!`**  
+**`ping www.nts.eu -c1 > /dev/null && echo "Website is online" || echo "Website is offline"`**  
 ```
-dkofler@ibk-tr-deb01:~$ touch file1
-dkofler@ibk-tr-deb01:~$ rm file1 && echo It worked! || echo It failed!
-It worked!
+dkofler@ibk-tr-deb01:~$ ping www.nts.eu -c1 > /dev/null && echo "Website is online" || echo "Website is offline"
+Website is online
 ```
-**`rm file1 && echo It worked! || echo It failed!`**
+**`ping www.nts1.eu -c1 > /dev/null && echo "Website is online" || echo "Website is offline"`**
 ```
-dkofler@ibk-tr-deb01:~$ rm file1 && echo It worked! || echo It failed!
-rm: cannot remove 'file1': No such file or directory
-It failed!
+dkofler@ibk-tr-deb01:~$ ping www.nts1.eu -c1 > /dev/null && echo "Website is online" || echo "Website is offline"
+ping: www.nts1.eu: Name or service not known
+Website is offline
 ```
 
 ### 9. Escape the special characters we used before
@@ -107,19 +106,19 @@ dkofler@ibk-tr-deb01:~$ echo $SHELL
 ```
 
 ### 12. Combine variables
-**`echo This is $USER on $HOSTNAME and I am using $SHELL. My ID is $UID and currently in $PWD`**
+**`echo This is $USER on $HOST and I am using $SHELL. My ID is $UID and currently in $PWD`**
 ```
-dkofler@ibk-tr-deb01:~$ echo This is $USER on $HOSTNAME and I am using $SHELL. My ID is $UID and currently in $PWD
+dkofler@ibk-tr-deb01:~$ echo This is $USER on $HOST and I am using $SHELL. My ID is $UID and currently in $PWD
 This is dkofler on ibk-tr-deb01 and I am using /bin/bash. My ID is 1000 and currently in /home/dkofler
 ```
 
 ### 13. Variables are case sensitive
-**`echo Hostname: $HOSTNAME`**  
-**`echo Hostname: $hostname`**
+**`echo Hostname: $HOST`**  
+**`echo Hostname: $host`**
 ```
-dkofler@ibk-tr-deb01:~$ echo Hostname: $HOSTNAME
+dkofler@ibk-tr-deb01:~$ echo Hostname: $HOST
 Hostname: ibk-tr-deb01
-dkofler@ibk-tr-deb01:~$ echo Hostname $hostname
+dkofler@ibk-tr-deb01:~$ echo Hostname $host
 Hostname
 ```
 
@@ -130,52 +129,62 @@ dkofler@ibk-tr-deb01:~$ echo The kernel version is $(uname -r)
 The kernel version is 4.19.0-14-amd64
 ```
 
-**`echo The OS version is $(cat /etc/debian_version)`**
+**`echo The OS release name is $(cat /etc/debian_version)`**
 ```
-dkofler@ibk-tr-deb01:~$ echo The OS version is $(cat /etc/debian_version)
-The OS version is 10.8
+dkofler@ibk-tr-deb01:~$ echo The OS release name is $(cat /etc/debian_version)
+The OS release name is trixie/sid
 ```
 
-### 15. Repeat the last command
+### 15. Print the command history
+**`history`**  
+```
+dkofler@ibk-tr-deb01:~$ history
+  229  uname -r
+  230  echo My kernel version is $(uname -r)
+  231  cat /etc/debian_version
+  232  echo the OS version is $(cat /etc/debian_version)
+```
+
+### 16. Repeat the last command
 **`cat /etc/os-release | grep PRETTY`**  
 **`!!`**
 ```
 dkofler@ibk-tr-deb01:~$ !!
 cat /etc/os-release | grep PRETTY
-PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+PRETTY_NAME="Ubuntu 24.04.3 LTS"
 ```
 
-### 16. Repeat the last command starting with "to"
+### 17. Repeat the last command starting with "to"
 **`!to`**  
 ```
 dkofler@ibk-tr-deb01:~$ !to
 touch file1
 ```
 
-### 17. Show the last 10 history entries
-**`history 10`**  
+### 18. Show the last 10 history entries
+**`history -10`**  
 ```
-dkofler@ibk-tr-deb01:~$ history 10
-  541  echo $myvar2
-  542  env -i echo $myvar2
-  543  env -i bash -c echo $myvar2
-  544  env | grep myvar
-  545  cat /etc/os-release | grep DEBIAN
-  546  cat /etc/os-release
-  547  cat /etc/os-release | grep NAME
-  548  cat /etc/os-release | grep PRETTY
-  549  touch file1
-  550  history 10
+dkofler@ibk-tr-deb01:~$ history -10
+  235  history
+  236  cat /etc/os-release | grep PRETTY
+  237  history 10
+  238  history 5
+  239  man history
+  240  man -k history
+  241  which history
+  242  man omz_history
+  243  which omz_history
+  244  history -5
 ```
 
-### 18. Execute the command number n
+### 19. Execute the command number n
 **`!545`**  
 ```
 dkofler@ibk-tr-deb01:~$ !545
 cat /etc/os-release | grep DEBIAN
 ```
 
-### 19. Search the history for the last command containing a word
+### 20. Search the history for the last command containing a word
 **`CTRL+r`**  
 **`ip`**
 ```
@@ -184,7 +193,7 @@ dkofler@ibk-tr-deb01:~$ ip address show dev ens192 | grep -w 'inet' | awk '{prin
 172.24.88.112/24
 ```
 
-### 20. Prevent a command from being recorded in the history (space before the command)
+### 21. Prevent a command from being recorded in the history (space before the command)
 **`echo Password is abcdef`**  
 &nbsp;**` echo Password is ghijkl`**  
 **`history 3`**
