@@ -15,45 +15,7 @@
 ---
 
 ## Tasks
-### 1. Pass a couple of arguments to echo
-**`echo hi this is a test`**
-```
-dkofler@ibk-tr-deb01:~$ echo hi this is a test
-hi this is a test
-```
-
-### 2. Add some whitespaces
-**`echo hi`** &nbsp;&nbsp;&nbsp;&nbsp; **`this is`** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`a test`**
-```
-dkofler@ibk-tr-deb01:~$ echo hi      this is        a test
-hi this is a test
-```
-
-### 3. Prevent whitespace removal
-**`echo 'hi`** &nbsp;&nbsp;&nbsp;&nbsp; **`this is`** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`a test'`**
-```
-dkofler@ibk-tr-deb01:~$ echo 'hi      this is        a test'
-hi      this is        a test
-```
-
-### 4. Add a newline
-**`echo -e "hi this is a test \n to test the newline"`**
-```
-dkofler@ibk-tr-deb01:~$ echo -e "hi this is a test \n to test the newline"
-hi this is a test 
- to test the newline
-```
-
-### 5. Check it the command is internal or external
-**`type cd cat ls`**
-```
-dkofler@ibk-tr-deb01:~$ type cd cat ls
-cd is a shell builtin
-cat is /usr/bin/cat
-ls is aliased to `ls --color=auto'
-```
-
-### 6. Check the path variable for commands
+### 1. Check the path variable for commands
 **`which cd cat ls`**
 ```
 dkofler@ibk-tr-deb01:~$ which cd cat ls
@@ -61,7 +23,7 @@ dkofler@ibk-tr-deb01:~$ which cd cat ls
 /usr/bin/ls
 ```
 
-### 7. Create an alias for the ls -lh command
+### 2. Create an alias for the ls -lh command
 **`alias ll='ls -lh'`**  
 **`ll'`**
 ```
@@ -75,7 +37,7 @@ drwxr-xr-x 2 dkofler dkofler 4.0K Mar  7 21:12 dir3
 drwxr-xr-x 2 dkofler dkofler 4.0K Mar  7 21:16 dir-renamed
 ```
 
-### 8. Combine commands in one line
+### 3. Combine commands in one line
 **`echo Hello > file1.txt; echo Hello2 >> file1.txt; cat file1.txt; rm file1.txt`**
 ```
 dkofler@ibk-tr-deb01:~$ echo Hello > file1.txt; echo Hello2 >> file1.txt; cat file1.txt; rm file1.txt
@@ -83,16 +45,16 @@ Hello
 Hello2
 ```
 
-### 9. Start a command and send it to the background
+### 4. Start a command and send it to the background
 **`ping -c 4 -i 7 blog.dot11.org &`**
 
-### 10. Combine commands with a logical AND
+### 5. Combine commands with a logical AND
 **`sleep 5 && ping -c 3 www.google.at`**
 
-### 11. Produce an error so that the 2nd command is not executed
+### 6. Produce an error so that the 2nd command is not executed
 **`sleep F && ping -c 3 www.google.at`**
 
-### 12. Combine commands with a logical OR
+### 7. Combine commands with a logical OR
 **`cat daniel.txt || ls -l`**
 ```
 dkofler@ibk-tr-deb01:~$ cat daniel.txt || ls -l
@@ -104,7 +66,7 @@ total 40
 drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:12 dir3
 ```
 
-### 13. Combine the two logical operators
+### 8. Combine the two logical operators
 **`touch file1`**  
 **`rm file1 && echo It worked! || echo It failed!`**  
 ```
@@ -119,14 +81,14 @@ rm: cannot remove 'file1': No such file or directory
 It failed!
 ```
 
-### 14. Escape the special characters we used before
+### 9. Escape the special characters we used before
 **`echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.`**
 ```
 dkofler@ibk-tr-deb01:~$ echo Lets print an ampersand \&\; Then print some other chars like \|, \' and \<.
 Lets print an ampersand &; Then print some other chars like |, ' and <.
 ```
 
-### 15. Multilines
+### 10. Multilines
 **`echo This is a very long command \`**  
 **`thats why we split it into \`**  
 **`three lines`**
@@ -135,4 +97,100 @@ dkofler@ibk-tr-deb01:~$ echo This is a very long command \
 > thats why we split it into \
 > three lines
 This is a very long command thats why we split it into three lines
+```
+
+### 11. Print your current shell
+**`echo $SHELL`**
+```
+dkofler@ibk-tr-deb01:~$ echo $SHELL
+/bin/bash
+```
+
+### 12. Combine variables
+**`echo This is $USER on $HOSTNAME and I am using $SHELL. My ID is $UID and currently in $PWD`**
+```
+dkofler@ibk-tr-deb01:~$ echo This is $USER on $HOSTNAME and I am using $SHELL. My ID is $UID and currently in $PWD
+This is dkofler on ibk-tr-deb01 and I am using /bin/bash. My ID is 1000 and currently in /home/dkofler
+```
+
+### 13. Variables are case sensitive
+**`echo Hostname: $HOSTNAME`**  
+**`echo Hostname: $hostname`**
+```
+dkofler@ibk-tr-deb01:~$ echo Hostname: $HOSTNAME
+Hostname: ibk-tr-deb01
+dkofler@ibk-tr-deb01:~$ echo Hostname $hostname
+Hostname
+```
+
+### 14. Embedd commands
+**`echo The kernel version is $(uname -r)`**
+```
+dkofler@ibk-tr-deb01:~$ echo The kernel version is $(uname -r)
+The kernel version is 4.19.0-14-amd64
+```
+
+**`echo The OS version is $(cat /etc/debian_version)`**
+```
+dkofler@ibk-tr-deb01:~$ echo The OS version is $(cat /etc/debian_version)
+The OS version is 10.8
+```
+
+### 15. Repeat the last command
+**`cat /etc/os-release | grep PRETTY`**  
+**`!!`**
+```
+dkofler@ibk-tr-deb01:~$ !!
+cat /etc/os-release | grep PRETTY
+PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+```
+
+### 16. Repeat the last command starting with "to"
+**`!to`**  
+```
+dkofler@ibk-tr-deb01:~$ !to
+touch file1
+```
+
+### 17. Show the last 10 history entries
+**`history 10`**  
+```
+dkofler@ibk-tr-deb01:~$ history 10
+  541  echo $myvar2
+  542  env -i echo $myvar2
+  543  env -i bash -c echo $myvar2
+  544  env | grep myvar
+  545  cat /etc/os-release | grep DEBIAN
+  546  cat /etc/os-release
+  547  cat /etc/os-release | grep NAME
+  548  cat /etc/os-release | grep PRETTY
+  549  touch file1
+  550  history 10
+```
+
+### 18. Execute the command number n
+**`!545`**  
+```
+dkofler@ibk-tr-deb01:~$ !545
+cat /etc/os-release | grep DEBIAN
+```
+
+### 19. Search the history for the last command containing a word
+**`CTRL+r`**  
+**`ip`**
+```
+(reverse-i-search)`ip': ip address show dev ens192 | grep -w 'inet' | awk '{print $2}' # Get IP of ens192
+dkofler@ibk-tr-deb01:~$ ip address show dev ens192 | grep -w 'inet' | awk '{print $2}' # Get IP of ens192
+172.24.88.112/24
+```
+
+### 20. Prevent a command from being recorded in the history (space before the command)
+**`echo Password is abcdef`**  
+&nbsp;**` echo Password is ghijkl`**  
+**`history 3`**
+```
+dkofler@ibk-tr-deb01:~$ history 3
+  555  ip address show dev ens192 | grep -w 'inet' | awk '{print $2}' # Get IP of ens192
+  556  echo Password is abcdef
+  557  history 3
 ```
