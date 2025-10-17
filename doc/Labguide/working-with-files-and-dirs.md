@@ -180,14 +180,14 @@ drwxr-xr-x 2 dkofler dkofler 4096 Mar  7 21:16 dir-renamed
 -rw-r--r-- 1 dkofler dkofler  807 Mar  1 17:17 .profile
 ```
 
-### 1. List files in home folder
+### 12. List files in home folder
 **`ls`**
 ```
 dkofler@ibk-tr-deb01:~$ ls
 dkofler@ibk-tr-deb01:~$
 ```
 
-### 2. Extend the list output
+### 13. Extend the list output
 **`ls -lah`**
 ```
 dkofler@ibk-tr-deb01:~$ ls -lah
@@ -200,7 +200,7 @@ drwxr-xr-x 3 root    root    4.0K Mar  1 17:17 ..
 -rw-r--r-- 1 dkofler dkofler  807 Mar  1 17:17 .profile
 ```
 
-### 3. Show root filesystem
+### 14. Show root filesystem
 **`ls -l /`**
 ```
 dkofler@ibk-tr-deb01:~$ ls -l /
@@ -233,7 +233,7 @@ lrwxrwxrwx   1 root root    28 Mar  1 17:13 vmlinuz -> boot/vmlinuz-4.19.0-14-am
 lrwxrwxrwx   1 root root    28 Mar  1 17:13 vmlinuz.old -> boot/vmlinuz-4.19.0-14-amd64
 ```
 
-### 4. Use options in a different order
+### 15. Use options in a different order
 **`cd /usr`**  
 **`ls -hl`**
 ```
@@ -252,10 +252,10 @@ drwxr-xr-x 85 root root 4.0K Mar  1 17:23 share
 drwxr-xr-x  2 root root 4.0K Jan 30 18:37 src
 ```
 
-### 5. Change to the /var directory
+### 16. Change to the /var directory
 **`cd /var`**
 
-### 6. List files in the /var directory
+### 17. List files in the /var directory
 **`ls -l`**
 ```
 dkofler@ibk-tr-deb01:/var$ ls -l
@@ -273,17 +273,17 @@ drwxr-xr-x  4 root root  4096 Mar  1 17:12 spool
 drwxrwxrwt  3 root root  4096 Mar  3 00:00 tmp
 ```
 
-### 7. Change to your home directory
+### 18. Change to your home directory
 **`cd`**
 
-### 8. Print the working directory
+### 19. Print the working directory
 **`pwd`**
 ```
 dkofler@ibk-tr-deb01:~$ pwd
 /home/dkofler
 ```
 
-### 9. Change to the parent directory
+### 20. Change to the parent directory
 **`cd ..`**
 ```
 dkofler@ibk-tr-deb01:~$ cd ..
@@ -291,10 +291,10 @@ dkofler@ibk-tr-deb01:/home$ pwd
 /home
 ```
 
-### 10. Change to the /var/cache/apt directory
+### 21. Change to the /var/cache/apt directory
 **`cd /var/cache/apt`**
 
-### 11. Change back to the /home directory
+### 22. Change back to the /home directory
 **`cd -`**
 ```
 dkofler@ibk-tr-deb01:/var/cache/apt$ cd -
@@ -302,7 +302,7 @@ dkofler@ibk-tr-deb01:/var/cache/apt$ cd -
 dkofler@ibk-tr-deb01:/home$
 ```
 
-### 12. Use absolute and relaive paths
+### 23. Use absolute and relaive paths
 **`cd /boot`**
 **`ls`**
 ```
@@ -321,13 +321,13 @@ dkofler@ibk-tr-deb01:/boot$ cd grub
 dkofler@ibk-tr-deb01:/boot/grub$ pwd
 /boot/grub
 ```
-### 13. Use tab completion
+### 24. Use tab completion
 **`cd /var/ca<TAB>`**
 
-### 14. Use same command with upper case letter
+### 25. Use same command with upper case letter
 **`cd /var/Ca<TAB>`**
 
-### 15. Create a directory
+### 26. Create a directory
 **`cd`**  
 **`mkdir nts`**  
 **`ls -l`**
@@ -339,17 +339,17 @@ total 4
 drwxr-xr-x 2 dkofler dkofler 4096 Mar  6 18:39 nts
 ```
 
-### 16. Create a subdirectory
+### 27. Create a subdirectory
 **`mkdir nts/subdir`**    
 **`ls -l nts`**
 
-### 17. Create a new directory with a subdirectory
+### 28. Create a new directory with a subdirectory
 **`mkdir nts2/subdir2`**  
 ```
 dkofler@ibk-tr-deb01:~$ mkdir nts2/subdir2
 mkdir: cannot create directory ‘nts2/subdir2’: No such file or directory
 ```
-### 18. Create a new directory with a subdirectory and the -p option
+### 29. Create a new directory with a subdirectory and the -p option
 **`mkdir -p nts2/subdir2`**  
 **`ls -l nts2`**
 ```
@@ -358,23 +358,23 @@ total 4
 drwxr-xr-x 2 dkofler dkofler 4096 Mar  6 18:47 subdir2
 ```
 
-### 19. Delete the subdir directory
+### 30. Delete the subdir directory
 **`rmdir nts/subdir`**
 
-### 20. Delete the nts2 directory
+### 31. Delete the nts2 directory
 **`rmdir nts2`**
 ```
 dkofler@ibk-tr-deb01:~$ rmdir nts2
 rmdir: failed to remove 'nts2': Directory not empty
 ```
 
-### 21. Delete the subdir2 directory with the -p option
+### 32. Delete the subdir2 directory with the -p option
 **`rmdir -p nts2/subdir2`**
 
-### 1. Display the first lines of a file
+### 33. Display the first lines of a file
 **`head -n 5 .zsh_history`**
 
-### 2. Display the last lines of a file
+### 34. Display the last lines of a file
 **`tail -15 /etc/services`**
 ```
 dkofler@ibk-tr-deb01:~$ tail -15 /etc/services
@@ -395,7 +395,7 @@ fido		60179/tcp			# fidonet EMSI over TCP
 # Local services
 ```
 
-### 3. Display the whole content of a file
+### 35. Display the whole content of a file
 **`cat /etc/hosts`**
 ```
 dkofler@ibk-tr-deb01:~$ cat /etc/hosts
@@ -415,10 +415,10 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 ```
 
-### 4. Concatenate files
+### 36. Concatenate files
 **`cat /etc/os-release /etc/resolv.conf`**
 
-### 5. Write something to a file
+### 37. Write something to a file
 **`echo "Something important" > important.txt`**  
 **`cat important.txt`**
 ```
@@ -427,13 +427,13 @@ dkofler@ibk-tr-deb01:~$ cat important.txt
 Something important
 ```
 
-### 6. Concatenate files into a new file
+### 38. Concatenate files into a new file
 **`cat /etc/os-release /etc/resolv.conf important.txt > output.txt`**
 
-### 7. Add content to a file
+### 39. Add content to a file
 **`cat /proc/cpuinfo >> output.txt`**
 
-### 8. Use cat to add content to a file
+### 40. Use cat to add content to a file
 **`cat > content.txt`**  
 Use CTRL+d to signal the end of file.
 ```
@@ -441,11 +441,11 @@ dkofler@ibk-tr-deb01:~$ cat > content.txt
 This is some very cool content!
 ```
 
-### 9. Use cat copy a file
+### 41. Use cat copy a file
 **`cat content.txt > copy.txt`**
 
-### 10. View a large file page by page
+### 42. View a large file page by page
 **`more /etc/mime.types`**
 
-### 11. View a large file with less
+### 43. View a large file with less
 **`less /etc/locale.gen`**
