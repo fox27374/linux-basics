@@ -60,14 +60,3 @@ user3@ibk-tr-deb00:~$ pwd
 dkofler@ibk-tr-deb00:~$ groups user3
 user3 : user3 group1
 ```
-
-### 8. Modify /etc/skel and create a new user
-**`sudo vi /etc/skel/.bashrc`**  
-Uncomment the 'll' alias and save the file  
-**`sudo useradd -m -c 'Testuser 4' -s /bin/bash user4`**  
-**`sudo passwd user4`**  
-Login to the user and try the 'll' command   
-**`su - user4`**  
-**`ll`**  
-Print the users IDs  
-**`id`**  
