@@ -27,6 +27,7 @@ http {
 	# Basic Settings
 	##
 ```
+
 ### 8. Open the nginx error.log with tail
 **`sudo tail -f /var/log/nginx/error.log`**
 
