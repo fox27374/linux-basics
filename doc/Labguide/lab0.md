@@ -1,10 +1,10 @@
-# Install nginx
+# Webserver
 ## Commands
 | Command | Description |
 | --- | --- |
 | apt | debian package manager |
 | systemctl| start / stop / status of processes |
-| netstat | show open ports and network connections |
+| ss | show open ports and network connections |
 ---
 
 ## Tasks
@@ -66,8 +66,8 @@
 ### 7. Create a new file called **ntslab** in /etc/nginx/sites-available/ with the content
 ```
 server {
-        listen 80;
-        listen [::]:80;
+        listen 8080;
+        listen [::]:8080;
 
         root /var/www/ntslab/html;
         index index.html index.htm;
@@ -87,8 +87,8 @@ server {
 
 ### 10. Start the nginx service
 ### 11. Find the port that nginx is listening on
-### 12. Open a browser and visit your new website (replace XX with your student number)
-**`http://ibk-lnx-trXX.ntslab.loc:<PORT>`**
+### 12. Open a browser and visit your new website (replace XX with your lab number)
+**`https://labXX.aws.ntslab.eu`**
 
 ### 13. In your home directory, create a link to the html folder
 **`ln -s /var/www/ntslab/html html`**
