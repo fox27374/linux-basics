@@ -15,14 +15,11 @@
 ### 3. Search the ufw package
 **`sudo apt search ufw`**  
 
-### 4. Install the packages ufw, dnsutils and nmap
-**`sudo apt install ufw dnsutils nmap`**  
+### 4. Install the packages dnsutils and nmap
+**`sudo apt install dnsutils nmap`**  
 
-### 5. Remove the ufw package and purge all configs
-**`sudo apt remove ufw --purge`**  
+### 5. Remove the nmap package and purge all configs
+**`sudo apt remove nmap --purge`**  
 
 ### 6. List all installed packages
 **`sudo apt list --installed | more`**  
-
-### 7. Check the used sources
-**`cat /etc/apt/sources.list`** 
