@@ -28,87 +28,82 @@ dkofler@ibk-tr-deb00:~$ ip a
 ```
 
 ### 2. Display the networking config file
-**`cat /etc/network/interfaces`** 
+**`sudo cat /etc/netplan/50-cloud-init.yaml`** 
 ```
-dkofler@ibk-tr-deb00:~$ cat /etc/network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-source /etc/network/interfaces.d/*
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-allow-hotplug ens192
-iface ens192 inet static
-	address 172.24.87.100/24
-	gateway 172.24.87.254
-	# dns-* options are implemented by the resolvconf package, if installed
-	dns-nameservers 172.24.85.10
-	dns-search ntslab.loc
+dkofler@ibk-tr-deb00:~$ sudo cat /etc/netplan/50-cloud-init.yaml
+network:
+  version: 2
+  ethernets:
+    ens5:
+      match:
+        macaddress: "0a:72:01:92:3a:05"
+      dhcp4: true
+      dhcp6: false
+      set-name: "ens5"
 ```
 
 ### 3. Display the DNS config file
 **`cat /etc/resolv.conf`** 
 ```
 dkofler@ibk-tr-deb00:~$ cat /etc/resolv.conf 
-domain NTSLAB.loc
-search NTSLAB.loc
-nameserver 172.24.85.10
-nameserver 172.24.85.10
+nameserver 127.0.0.53
+options edns0 trust-ad
+search eu-west-1.compute.internal
 ```
 
 ### 4. Ping a server thats located outside the network to check DNS resolution
-**`ping blog.dot11.org`**
+**`ping mail.kofler.sh`**
 
 ### 5. Change the resolv.conf file to use a differnt nameserver
 ```
-domain NTSLAB.loc
-search NTSLAB.loc
 nameserver 12.34.56.78
+options edns0 trust-ad
+search eu-west-1.compute.internal
 ```
 
 ### 6. Try to ping the server again
 ### 7. Add an entry to the /etc/hosts file
 ```
-127.0.0.1	localhost
-127.0.1.1	ibk-tr-deb00.ntslab.loc	ibk-tr-deb00
-116.203.37.199	blog.dot11.org
-
-# The following lines are desirable for IPv6 capable hosts
-::1     localhost ip6-localhost ip6-loopback
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
+127.0.0.1 localhost
+198.54.122.136 mail.kofler.sh
+# Splunk host and HEC endpoint
+10.42.22.30 splunk.lab.local
+10.42.22.30 hec.lab.local
+# Local lab DNS resolution
+10.42.22.13 lab013
 ```
 ### 8. Try to ping the server again
 ### 9. Use dig to query a public DNS server
-**`dig nts.eu @1.1.1.1`**
+**`dig nts.eu @1.1.1.1 +short`**
 
 ### 10. Display the current routes
 **`ip route`**
 ```
 dkofler@ibk-tr-deb00:~$ ip route
-default via 172.24.87.254 dev ens192 onlink 
-172.24.87.0/24 dev ens192 proto kernel scope link src 172.24.87.100 
+default via 10.42.22.1 dev ens5 proto dhcp src 10.42.22.13 metric 100
+10.42.22.0/26 dev ens5 proto kernel scope link src 10.42.22.13 metric 100
+10.42.22.1 dev ens5 proto dhcp scope link src 10.42.22.13 metric 100
+10.42.22.2 dev ens5 proto dhcp scope link src 10.42.22.13 metric 100
 ```
 
 ### 11. Display the route to the IP 8.8.8.8
 **`ip route get 8.8.8.8`**
 ```
 dkofler@ibk-tr-deb00:~$ ip route get 8.8.8.8
-8.8.8.8 via 172.24.87.254 dev ens192 src 172.24.87.100 uid 1000 
+8.8.8.8 via 10.42.22.1 dev ens5 src 10.42.22.13 uid 1001
 ```
 
 ### 12. Change the nameserver to the correct IP in resolv.conf
-### 13. Start up tcpdump and listen on port 8089
-**`sudo tcpdump -i 1 port 8089`**
+### 13. Start up tcpdump and display network traffic
+**`sudo tcpdump -n not port 22`**
 ```
-dkofler@ibk-tr-deb00:~$ sudo tcpdump -i 1 port 8089
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
-18:43:34.517134 IP ibk-tr-deb00.ntslab.loc.54360 > ibk-splunk-dep.ntslab.loc.8089: Flags [S], seq 393999611, win 64240, options [mss 1460,sackOK,TS val 1921404163 ecr 0,nop,wscale 7], length 0
-18:43:34.517881 IP ibk-splunk-dep.ntslab.loc.8089 > ibk-tr-deb00.ntslab.loc.54360: Flags [S.], seq 3302418155, ack 393999612, win 65160, options [mss 1460,sackOK,TS val 365861371 ecr 1921404163,nop,wscale 7], length 0
-18:43:34.517896 IP ibk-tr-deb00.ntslab.loc.54360 > ibk-splunk-dep.ntslab.loc.8089: Flags [.], ack 1, win 502, options [nop,nop,TS val 1921404164 ecr 365861371], length 0
+dkofler@ibk-tr-deb00:~$ sudo tcpdump -n not port 22
+listening on ens5, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+19:58:01.025209 IP 10.42.22.13.40298 > 10.42.22.30.80: Flags [S], seq 3596091802, win 62727, options [mss 8961,sackOK,TS val 3376401305 ecr 0,nop,wscale 7], length 0
+19:58:01.025460 IP 10.42.22.30.80 > 10.42.22.13.40298: Flags [S.], seq 179022929, ack 3596091803, win 62293, options [mss 8911,sackOK,TS val 3122305912 ecr 3376401305,nop,wscale 7], length 0
+19:58:01.025483 IP 10.42.22.13.40298 > 10.42.22.30.80: Flags [.], ack 1, win 491, options [nop,nop,TS val 3376401305 ecr 3122305912], length 0
+19:58:01.025648 IP 10.42.22.13.40298 > 10.42.22.30.80: Flags [P.], seq 1:344, ack 1, win 491, options [nop,nop,TS val 3376401306 ecr 3122305912], length 343: HTTP: POST /services/collector HTTP/1.1
+19:58:01.025667 IP 10.42.22.13.40298 > 10.42.22.30.80: Flags [P.], seq 344:706, ack 1, win 491, options [nop,nop,TS val 3376401306 ecr 3122305912], length 362: HTTP
+19:58:01.025833 IP 10.42.22.30.80 > 10.42.22.13.40298: Flags [.], ack 344, win 484, options [nop,nop,TS val 3122305912 ecr 3376401306], length 0
+19:58:01.025833 IP 10.42.22.30.80 > 10.42.22.13.40298: Flags [.], ack 706, win 482, options [nop,nop,TS val 3122305912 ecr 3376401306], length 0
 ```
