@@ -21,8 +21,7 @@ The whole training environment can be deployed via terraform and ansible. Have a
 10) [Logging](doc/Labguide/logging.md)
 11) [System information](doc/Labguide/system-information.md)
 12) [Networking](doc/Labguide/networking.md)
-13) [Networking SCP](doc/Labguide/networking-scp.md)
-14) [Networking UFW](doc/Labguide/networking-ufw.md)
+13) [Remote Files](doc/Labguide/remote-files.md)
 
 ### Labs
 0) [Webserver](doc/Labguide/lab0.md)
