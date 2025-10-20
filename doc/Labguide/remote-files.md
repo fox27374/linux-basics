@@ -1,4 +1,4 @@
-# SCP
+# Remote Files
 ## Commands
 | Command | Description |
 | ---| --- |
