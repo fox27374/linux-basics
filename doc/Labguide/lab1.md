@@ -6,13 +6,10 @@ Use the following commands to navigate through the filesystem:
 | --- | --- |
 | wget | transfer files from url |
 | tar | compress / extract files |
-| chown | change file / directory owner |
 | chmod | modify file / directory permissions |
-| netstat | show open ports and network connections |
+| ss | show open ports and network connections |
 | systemctl | controll processes |
-| docker | container runtime |
 ---
-This lab mainly follows [this](https://www.tecmint.com/install-wordpress-in-ubuntu-lamp-stack/) guide.
 ## Tasks
 ## Server 1 ##
 ### 1. Install apache webserver
@@ -32,8 +29,10 @@ Listen 8080
 
 ### 5. Edit the default vhost to listens on port 8080
 **`sudo vi /etc/apache2/sites-enabled/000-default.conf`** 
+And add the SetEnvIf line:
 ```
 <VirtualHost *:8080>
+  SetEnvIf X-Forwarded-Proto "^https$" HTTPS
 ```
 
 ### 6. Restart the webserver and check the listening ports (8080)
@@ -44,24 +43,24 @@ Listen 8080
 **`https://labXX.aws.ntslab.eu`**  
 
 ## Server 2 ##
-### 1. Install mysql server via docker
-**`docker run --name wordpress-mysql -e MYSQL_ROOT_PASSWORD=<ROOT PASWORD> --rm -p 3306:3306 -d mysql:latest`**  
+### 1. Install mysql server
+**`sudo apt install mysql-server mysql-client`**  
 
-### 2. exec into the mysql container
-**`docker exec -it wordpress-mysql mysql -u root -p`**  
+### 2. Start the mysql setup
+**`sudo mysql_secure_installation`**  
+* VALIDATE PASSWORD COMPONENT: No
+* Remove anonymous users: Yes
+* Disallow root login remotely: Yes
+* Remove test database: Yes
+* Reload privilege tables: Yes
 
-### 3. Create a table, user and privileges for the wordpress website
-**`create table wordpress;`**  
-**`CREATE USER 'wp_user'@'%' IDENTIFIED WITH mysql_native_password BY '<WP USER PASSWORD>';`** 
+### 3. Use the mysql client to create the wordpress database
+**`sudo mysql`**  
+**`CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`**  
+**`CREATE USER 'wp_user'@'%' IDENTIFIED BY 'your-password';`**  
 **`GRANT ALL ON wordpress.* TO 'wp_user'@'%';`**  
 **`FLUSH PRIVILEGES;`**  
-
-sudo mysql
-CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-CREATE USER 'wp_user'@'%' IDENTIFIED BY 'supersecure';
-GRANT ALL ON wordpress.* TO 'wp_user'@'%';
-FLUSH PRIVILEGES;
-EXIT;
+**`EXIT;`**  
 
 
 ### 4. Exit the container
@@ -72,16 +71,16 @@ EXIT;
 **`sudo systemctl stop apache2.service`**  
 
 ### 2. Install additional packages needed for wordpress
-**`sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip`**  
+**`sudo apt install php php-common php-mysql php-gmp php-curl php-intl php-mbstring php-xmlrpc php-gd php-xml php-cli php-zip php-intl php-zip`**  
 
 ### 4. Download the latest wordpress files
 **`wget -c http://wordpress.org/latest.tar.gz`**  
 
 ### 5. Extract the compressed file
+**`tar -xf latest.tar.gz`**  
 ### 6. Copy the content to the web content directory /var/www/html/
 
-### 7. Change the file owner and permissions
-**`sudo chown -R www-data:www-data /var/www/html/`**  
+### 7. Change permissions
 **`sudo chmod -R 755 /var/www/html/`**  
 
 ### 8. Rename the wordpress sample config and delete the default index file
@@ -92,10 +91,10 @@ EXIT;
 ### 9. Edit the file wp-config.php and set the values for the DB connection
 * DB_NAME: wordpress
 * DB_USER: wp_user
-* DB_PASSWORD: `<DB ROOT PASSWORD>`
+* DB_PASSWORD: `<wp_user password>`
 * DB_HOST: `<Server2 IP>`
 
-### 10. Add the following code to the file (because of the reverse proxy)
+### 10. Add the following code to the file (needed because of the reverse proxy)
 ```sh
 if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
         $_SERVER['HTTPS'] = 'on';
@@ -109,4 +108,9 @@ if (!empty($_SERVER['HTTP_X_FORWARDED_HOST'])) {
 
 ### 11. Start the webserver
 ### 12. Check if the website works
+### 13. Troubleshooting hints
+* sudo journalctl -fu apache2.service
+* sudo tail -f /var/log/apache2/access.log or error.log
+* sudo ss -tlpn | grep apache
+* sudo tcpdump -n port 8080 or 3306
 
