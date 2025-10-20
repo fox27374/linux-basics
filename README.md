@@ -26,6 +26,5 @@ The whole training environment can be deployed via terraform and ansible. Have a
 ### Labs
 0) [Webserver](doc/Labguide/lab0.md)
 1) [On premises Wordpress](doc/Labguide/lab1.md)
-2) [Splunk with universal forwarder](doc/Labguide/lab2.md)
 
 All commands are tested on [Ubuntu 24.04](https://ubuntu.com/). IP addresses and FQDN names are internal lab IPs and names.
