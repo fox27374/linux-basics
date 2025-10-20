@@ -22,10 +22,26 @@ This lab mainly follows [this](https://www.tecmint.com/install-wordpress-in-ubun
 **`sudo systemctl status apache2.service`**  
 
 ### 3. Check the open ports
-**`sudo netstat -tulpn | grep apache`**
+**`sudo ss -tlpn | grep apache`**
 
-### 4. Check if you can reach the webserver from the internet
-**`http://<BASTION IP>:80XX`** 
+### 4. Edit the apache config file so that the server listens on port 8080
+**`sudo vi /etc/apache2/ports.conf`** 
+```
+Listen 8080
+```
+
+### 5. Edit the default vhost to listens on port 8080
+**`sudo vi /etc/apache2/sites-enabled/000-default.conf`** 
+```
+<VirtualHost *:8080>
+```
+
+### 6. Restart the webserver and check the listening ports (8080)
+**`sudo systemctl restart apache2.service`**  
+**`sudo ss -tlpn | grep apache`**  
+
+### 7. Check if you can reach the webserver from the internet
+**`https://labXX.aws.ntslab.eu`**  
 
 ## Server 2 ##
 ### 1. Install mysql server via docker
@@ -39,6 +55,14 @@ This lab mainly follows [this](https://www.tecmint.com/install-wordpress-in-ubun
 **`CREATE USER 'wp_user'@'%' IDENTIFIED WITH mysql_native_password BY '<WP USER PASSWORD>';`** 
 **`GRANT ALL ON wordpress.* TO 'wp_user'@'%';`**  
 **`FLUSH PRIVILEGES;`**  
+
+sudo mysql
+CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE USER 'wp_user'@'%' IDENTIFIED BY 'supersecure';
+GRANT ALL ON wordpress.* TO 'wp_user'@'%';
+FLUSH PRIVILEGES;
+EXIT;
+
 
 ### 4. Exit the container
 **`exit;`** 
