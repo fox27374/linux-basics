@@ -62,10 +62,6 @@ And add the SetEnvIf line:
 **`FLUSH PRIVILEGES;`**  
 **`EXIT;`**  
 
-
-### 4. Exit the container
-**`exit;`** 
-
 ## Server 1 ##
 ### 1. Stop the webserver
 **`sudo systemctl stop apache2.service`**  
