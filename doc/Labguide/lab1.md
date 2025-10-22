@@ -46,7 +46,20 @@ And add the SetEnvIf line:
 ### 1. Install mysql server
 **`sudo apt install mysql-server mysql-client`**  
 
-### 2. Start the mysql setup
+### 2. Configure the server to listen on all IPs
+**`sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf`**  
+```
+bind-address            = 0.0.0.0
+mysqlx-bind-address     = 0.0.0.0
+```
+
+### 3. Restart the database server and check it its listening to 0.0.0.0
+**`sudo ss -tlpn | grep 3306`**  
+```
+LISTEN 0      151          0.0.0.0:3306       0.0.0.0:*    users:(("mysqld",pid=54655,fd=21))
+```
+
+### 4. Start the mysql setup
 **`sudo mysql_secure_installation`**  
 * VALIDATE PASSWORD COMPONENT: No
 * Remove anonymous users: Yes
@@ -54,7 +67,7 @@ And add the SetEnvIf line:
 * Remove test database: Yes
 * Reload privilege tables: Yes
 
-### 3. Use the mysql client to create the wordpress database
+### 5. Use the mysql client to create the wordpress database
 **`sudo mysql`**  
 **`CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`**  
 **`CREATE USER 'wp_user'@'%' IDENTIFIED BY 'your-password';`**  
