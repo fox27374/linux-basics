@@ -18,7 +18,10 @@
 **`tar -xzf pan_log.tar.gz`**  
 
 ### 3. Get the number of lines the file contains
-**`cat`**
+<details><summary>Hint</summary>
+**`cat pan.log | wc -l`**
+</details>
+
 
 ### 4. Stop the nginx service
 ### 5. Create a new directory /var/www/ntslab/html
@@ -99,4 +102,3 @@ server {
 ### 14. Edit the file directly using the link
 **`sudo vi html/index.html`**
 
-### 15. Add somthing cool to the html page and check the result
