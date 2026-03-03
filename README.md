@@ -21,10 +21,11 @@ The whole training environment can be deployed via terraform and ansible. Have a
 10) [Logging](doc/Labguide/logging.md)
 11) [System information](doc/Labguide/system-information.md)
 12) [Networking](doc/Labguide/networking.md)
-13) [Remote Files](doc/Labguide/remote-files.md)
+13) [Remote Files](doc/Labguide/remote-files.md) 
 
 ### Labs
-0) [Webserver](doc/Labguide/lab0.md)
-1) [On premises Wordpress](doc/Labguide/lab1.md)
+0) [Log file analysis](doc/Labguide/lab0.md)
+1) [Webserver](doc/Labguide/lab1.md)
+2) [On premises Wordpress](doc/Labguide/lab2.md)
 
 All commands are tested on [Ubuntu 24.04](https://ubuntu.com/). IP addresses and FQDN names are internal lab IPs and names.

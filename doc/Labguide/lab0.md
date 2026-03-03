@@ -1,21 +1,24 @@
-# Webserver
+# Log file analysis
 ## Commands
 | Command | Description |
 | --- | --- |
-| apt | debian package manager |
-| systemctl| start / stop / status of processes |
-| ss | show open ports and network connections |
+| cat | debian package manager |
+| grep | filter lines containing a string |
+| cut | filter columns depending on the delimiter |
+| sort | sort based on options |
+| uniq | remove duplicates from a sorted list |
+| tar | extract / compress files |
 ---
 
 ## Tasks
-### 1. Update the apt repository
-**`sudo apt update`**  
+### 1. Download the provided logfile
+**`scp splunk.lab.local:pan_log.tar.gz .`**  
 
-### 2. Install nginx
-**`sudo apt install nginx`**  
+### 2. Extract the file
+**`tar -xzf pan_log.tar.gz`**  
 
-### 3. Check if the nginx service is running
-**`sudo systemctl status nginx.service`**
+### 3. Get the number of lines the file contains
+**`cat`**
 
 ### 4. Stop the nginx service
 ### 5. Create a new directory /var/www/ntslab/html

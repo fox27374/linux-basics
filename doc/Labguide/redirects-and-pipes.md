@@ -94,3 +94,5 @@ dkofler@ibk-tr-deb00:~$ find /var/log/ -type f -name '*.log' 2> /dev/null
 /var/log/cloud-init-output.log
 /var/log/kern.log
 ```
+
+### 10. [Log file analysis](lab0.md)
